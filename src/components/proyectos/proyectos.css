@@ -1,0 +1,30 @@
+.proyectos {
+  min-height: 100vh;
+}
+
+.backgroundWave {
+  position: absolute;
+  z-index: -1;
+}
+
+.titleProyectos {
+  display: flex;
+  justify-content: center;
+}
+
+.titleProyectos h2 {
+  margin-top: 90px;
+  font-size: 70px;
+  text-transform: uppercase;
+  color: rgb(37, 36, 36);
+  box-shadow: black 2px 3px 10px;
+}
+
+.proyectosCards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 13px;
+  min-width: 100%;
+  margin-top: 40px;
+}
