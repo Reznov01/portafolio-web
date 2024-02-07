@@ -1,8 +1,20 @@
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #2f3640;
+}
+
 .navbar {
+  min-width: 100%;
+
+  top: 0;
+  display: flex;
   justify-content: space-between;
   text-transform: capitalize;
   color: aliceblue;
 }
+
 .navbar h2 {
   margin-top: 10px;
 }

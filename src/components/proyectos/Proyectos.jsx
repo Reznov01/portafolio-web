@@ -32,6 +32,11 @@ export const Proyectos = () => {
           title="Echo con react"
           subtitle="Mas que amor"
         />
+        <Card
+          imagen={imgProyecto4}
+          title="Echo con react"
+          subtitle="Mas que amor"
+        />
       </div>
     </div>
   );

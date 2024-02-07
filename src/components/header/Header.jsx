@@ -7,7 +7,7 @@ import man from "../../assets/img/man2.svg";
 
 export const Header = () => {
   return (
-    <div>
+    <div className="header">
       <div className="container dp">
         <div className="content">
           <div className="presentation">

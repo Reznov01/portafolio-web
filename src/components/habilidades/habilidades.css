@@ -1,0 +1,30 @@
+.habilidades-tecnologias {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-habilidades {
+  width: 100%;
+  text-align: center;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 200px;
+
+  /* background-color: red; */
+}
+.contenido-habilidades {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.skill img {
+  width: 100%;
+  margin-bottom: 20px;
+}
