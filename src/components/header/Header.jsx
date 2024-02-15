@@ -1,6 +1,6 @@
 import React from "react";
 import "./header.css";
-import LinkedinImg from "../../assets/img/Linkedin.png";
+import LinkedinImg from "../../assets/img/linkedin.png";
 import Github from "../../assets/img/github.png";
 import Cv from "../../assets/img/resume.png";
 import man from "../../assets/img/man2.svg";
@@ -21,7 +21,7 @@ export const Header = () => {
             <ul className="lista-icons">
               <li>
                 <a href="#">
-                  <img src={LinkedinImg} alt="ling linkedin" />
+                  <img src={LinkedinImg} alt="link linkedin" />
                 </a>
               </li>
               <li>
