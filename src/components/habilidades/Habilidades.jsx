@@ -1,5 +1,7 @@
 import React from "react";
 import "./habilidades.css";
+import "./responsive.css";
+
 import a1 from "../../assets/img/habilidades/a1.png";
 import a2 from "../../assets/img/habilidades/a2.png";
 import a3 from "../../assets/img/habilidades/a3.png";
@@ -11,9 +13,9 @@ import a8 from "../../assets/img/habilidades/a8.png";
 import a9 from "../../assets/img/habilidades/a9.png";
 export const Habilidades = () => {
   return (
-    <section className="container habilidades">
+    <section className="container habilidades" id="habilidadesDiv">
       <div className="card">
-        <div className="habilidades-tecnologias card-body">
+        <div className="card-body habilidades-tecnologias">
           <div className="title-habilidades">
             <h2> HABILIDADES</h2>
           </div>
@@ -21,44 +23,44 @@ export const Habilidades = () => {
             <div className="skill">
               <img src={a6} alt="imagen Javascript" />
 
-              <text>JAVASCRIPT</text>
+              <p>JAVASCRIPT</p>
             </div>
             <div className="skill">
               <img src={a7} alt="imagen Css3" />
 
-              <text>CSS3</text>
+              <p>CSS3</p>
             </div>
             <div className="skill">
               <img src={a8} alt="imagen HTML" />
 
-              <text>HTML</text>
+              <p>HTML</p>
             </div>
             <div className="skill">
               <img src={a1} alt="imagen Git" />
-              <text>GIT</text>
+              <p>GIT</p>
             </div>
             <div className="skill">
               <img src={a2} alt="imagen nodejs" />
-              <text>NODE JS</text>
+              <p>NODE JS</p>
             </div>
             <div className="skill">
               <img src={a3} alt="imagen reactjs" />
 
-              <text>REACT JS</text>
+              <p>REACT JS</p>
             </div>
             <div className="skill">
               <img src={a4} alt="imagen Python" />
 
-              <text>PYTHON</text>
+              <p>PYTHON</p>
             </div>
             <div className="skill">
               <img src={a5} alt="imagen Nodejs" />
 
-              <text>NODE JS</text>
+              <p>NODE JS</p>
             </div>
             <div className="skill">
               <img src={a9} alt="imagen Electronjs" />
-              <text>ELECTRON JS</text>
+              <p>ELECTRON JS</p>
             </div>
           </div>
         </div>

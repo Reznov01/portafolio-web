@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 import { Menu } from "./components/menu/Menu";
 import { Header } from "./components/header/Header";
@@ -8,7 +7,7 @@ import Experiencia from "./components/experiencia/Experiencia";
 import Footer from "./components/footer/Footer";
 function App() {
   return (
-    <div>
+    <div className="appDiv">
       <Menu />
 
       <Header />

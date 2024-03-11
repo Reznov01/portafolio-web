@@ -1,6 +1,6 @@
 .header {
   background-color: #2f3640;
-  min-height: 100vh;
+  height: 100vh;
 }
 .dp {
   display: flex;

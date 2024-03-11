@@ -1,0 +1,11 @@
+@media screen and (max-width: 414px) {
+  .titleProyectos h2 {
+    font-size: 55px;
+  }
+  .proyectosDiv {
+    min-height: 100vh;
+  }
+  img {
+    width: 20px;
+  }
+}

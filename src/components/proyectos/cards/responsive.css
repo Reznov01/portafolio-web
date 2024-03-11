@@ -1,0 +1,9 @@
+@media screen and (max-width: 412px) {
+  .cardsDiv {
+    display: flex;
+    justify-content: center;
+  }
+  .card {
+    width: 90%;
+  }
+}

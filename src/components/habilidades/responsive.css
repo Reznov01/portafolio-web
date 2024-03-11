@@ -1,0 +1,76 @@
+/* .habilidades {
+  margin-top: 50px;
+} */
+
+.title-habilidades h2 {
+  font-size: 45px;
+}
+
+.contenido-habilidades img {
+  width: 130px;
+  transform: translateX(35px);
+}
+
+.contenido-habilidades p {
+  font-size: 26px;
+}
+
+@media screen and (max-width: 414px) {
+  .habilidades {
+    position: relative;
+
+    min-height: 100vh;
+    margin-top: 80px;
+  }
+  .title-habilidades h2 {
+    font-size: 45px;
+    padding-bottom: 20px;
+  }
+  .habilidades .card {
+    position: absolute;
+    top: 0;
+  }
+  .contenido-habilidades {
+    flex-wrap: wrap;
+  }
+  .contenido-habilidades img {
+    width: 80px;
+  }
+
+  .contenido-habilidades .skill p {
+    font-size: 15px;
+  }
+
+  .skill {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .habilidades {
+    position: relative;
+
+    min-height: 100vh;
+    margin-top: 40px;
+  }
+
+  .title-habilidades h2 {
+    font-size: 30px;
+    padding-bottom: 20px;
+  }
+  .contenido-habilidades {
+    flex-wrap: wrap;
+  }
+
+  .contenido-habilidades img {
+    width: 60px;
+    margin-left: -10px;
+  }
+
+  .contenido-habilidades .skill p {
+    font-size: 16px;
+  }
+  .skill {
+    width: 100px;
+  }
+}

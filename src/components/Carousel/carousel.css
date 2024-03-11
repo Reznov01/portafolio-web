@@ -1,0 +1,59 @@
+@media screen and (min-width: 1281px) {
+  .cardCarousel {
+    display: none !important;
+  }
+  .certificadosContainer {
+    display: flex;
+  }
+
+  .fn {
+    display: none;
+  }
+}
+
+.fn {
+  min-width: 100%;
+  overflow: hidden;
+}
+
+.fn .card {
+  width: 1500px;
+  border: none;
+  /* min-width: 800px !important; */
+}
+
+.fn .carousel-control-prev,
+.fn .carousel-control-next {
+  filter: invert(100%);
+}
+
+.fn .carousel-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-25%);
+}
+
+@media screen and (max-width: 990px) {
+  .cardCarousel {
+    display: block;
+  }
+  .fn .carousel-inner {
+    display: block;
+
+    transform: translate(10%);
+  }
+  .card {
+    font-size: 40px !important;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .carousel-item h2 {
+    font-size: 20px;
+  }
+
+  .carousel-item ul {
+    font-size: 15px;
+  }
+}

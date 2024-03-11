@@ -1,5 +1,6 @@
 import React from "react";
 import "./header.css";
+import "./responsive.css";
 import LinkedinImg from "../../assets/img/linkedin.png";
 import Github from "../../assets/img/github.png";
 import Cv from "../../assets/img/resume.png";
@@ -7,14 +8,14 @@ import man from "../../assets/img/man2.svg";
 
 export const Header = () => {
   return (
-    <div className="header">
+    <div className="header " id="home">
       <div className="container dp">
         <div className="content">
           <div className="presentation">
             <h1 className="letraColor title">
               Descubre mi mundo <span className="digital">digital</span>
             </h1>
-            <p className="letraColor">
+            <p className="letraColor subTitle">
               <span className="name">Rafael Romero Molina</span> - Desarrollador
               Web Front-end
             </p>

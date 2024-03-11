@@ -1,0 +1,32 @@
+/* nav mobile style */
+
+@media screen and (min-width: 836px) {
+  .menuWeb {
+    display: block;
+  }
+  .menuMobile {
+    display: none;
+  }
+}
+@media screen and (max-width: 835px) {
+  .menuWeb {
+    display: none;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: start !important;
+    z-index: 2;
+  }
+
+  .navbar h1 {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-size: 30px;
+    margin-top: 5px;
+    padding-left: 20px;
+  }
+  .burgerIconNav {
+    font-size: 35px;
+  }
+}

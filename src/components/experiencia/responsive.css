@@ -1,0 +1,78 @@
+@media screen and (max-width: 1280px) {
+  .certificadosContainer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .fn .card {
+    width: 100%; /* Ajusta el ancho de las tarjetas al 100% del contenedor */
+    margin: 0 auto; /* Centra horizontalmente las tarjetas dentro del carrusel */
+    /* background: red; */
+  }
+  .carousel-item {
+    width: 90%; /* Ajusta el ancho de las tarjetas al 90% del contenedor */
+    margin-right: 15px; /* Añade un margen derecho para separar las tarjetas */
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .experienciaDiv {
+    min-height: 100vh;
+  }
+  .experiencia {
+    height: 70vh;
+    transform: translateY(-100px);
+  }
+  .certificadosDiv .cardDiv {
+    /* background-color: red; */
+    width: 44vh;
+    height: 80%;
+  }
+  .fn .carousel-inner {
+    display: block;
+
+    transform: translate(-10%) !important;
+  }
+  .fn .card {
+    width: 1100px !important;
+    transform: translateX(20px);
+  }
+
+  .fn {
+    min-width: 110% !important;
+    overflow: hidden;
+  }
+  .fn .carousel-control-prev {
+    transform: translateX(-20px);
+  }
+  .fn .carousel-control-next {
+    transform: translateX(-0px);
+  }
+  .cardDiv {
+    transform: translateY(50px);
+    background-color: red;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .experiencia {
+    height: 70vh;
+    transform: translateY(-100px);
+    margin-top: 60px;
+  }
+  .experiencia p {
+    font-size: 20px;
+  }
+
+  .fn .card {
+    width: 900px !important;
+    transform: translateX(20px);
+  }
+  .certificadosOracleSeccion p {
+    font-size: 14px;
+  }
+  .certificadosDiv .cardDiv {
+    margin-top: 46px;
+  }
+}

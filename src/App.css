@@ -8,3 +8,8 @@ body {
   background-color: #2f3640;
   min-height: 100vh;
 }
+
+/* .appDiv {
+  display: flex;
+  flex-direction: column;
+} */

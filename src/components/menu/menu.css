@@ -3,6 +3,18 @@ header {
   top: 0;
   z-index: 10;
   background-color: #2f3640;
+  max-height: 60px;
+  overflow: hidden;
+}
+
+.nameTitle button {
+  background: none;
+  border: none;
+  text-decoration: none;
+  font-size: 28px;
+  color: aliceblue;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-transform: uppercase;
 }
 
 .navbar {
@@ -16,17 +28,26 @@ header {
 }
 
 .navbar h2 {
-  margin-top: 10px;
+  margin-top: 1px;
 }
 
 .navbar li {
-  cursor: pointer;
-  color: black;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 20px;
-  color: aliceblue;
 }
 
-.navbar li:hover {
-  color: #00a8ff;
+ul li button {
+  background: none;
+  border: none;
+  color: aliceblue;
+  margin-left: 8px;
+  transition: all ease 0.3s;
+  border-bottom: 1px transparent;
+  padding-bottom: 4px;
+}
+
+ul li button:hover {
+  transform: translateY(-2px);
+  border-bottom: 1px solid rgba(2, 179, 255, 0.807);
+  padding: none;
 }

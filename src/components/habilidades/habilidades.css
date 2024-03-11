@@ -1,3 +1,10 @@
+.habilidades {
+  display: flex;
+  align-items: center;
+  /* background-color: red; */
+  height: 75vh;
+}
+
 .habilidades-tecnologias {
   display: flex;
   flex-direction: column;
@@ -13,8 +20,6 @@
   flex-direction: column;
   text-align: center;
   width: 200px;
-
-  /* background-color: red; */
 }
 .contenido-habilidades {
   display: flex;
