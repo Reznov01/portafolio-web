@@ -6,4 +6,86 @@
   .card {
     width: 90%;
   }
+
+  .card-text-hover-show {
+    opacity: 1;
+  }
+  .buttons {
+    position: absolute;
+    display: flex;
+    gap: 10px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .card-text-hover-show p {
+    font-size: 15px;
+  }
+  .buttons {
+    bottom: 0;
+    display: flex;
+    align-items: center;
+  }
+  .buttons button {
+    width: 150px;
+    height: 40px;
+  }
+  .buttons .btn-info {
+    margin-top: 10px;
+  }
+  .iconArrowCard {
+    z-index: 2;
+  }
+  .contentInfo {
+    width: 85%;
+    margin-left: 26px;
+  }
+  .infoBack {
+    font-size: 20px;
+    padding: 5px;
+  }
+  .tecnologiasProyecto h4 {
+    margin-left: 5px;
+    text-align: center;
+    font-size: 16px;
+  }
+  .tecnologiasProyecto li img {
+    display: flex;
+
+    width: 20px;
+  }
+  .tecnologiasProyecto li {
+    margin-left: 8px;
+  }
+  .proyectosDiv {
+    position: relative;
+  }
+
+  .proyectosDiv .backgroundWave {
+    position: absolute;
+    width: 100%;
+  }
+
+  .back .show {
+    opacity: 0; /* Empieza con la opacidad en 0 para que no se muestre inicialmente */
+    animation-name: showInfo;
+    animation-duration: 0.6s;
+    animation-delay: 0.8s; /* Agrega un retraso de 0.3s */
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes showInfo {
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@media screen and (max-width: 361px) {
+  .buttons button {
+    width: 140px;
+    height: 30px;
+    font-size: 12px;
+  }
 }

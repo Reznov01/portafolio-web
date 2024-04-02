@@ -1,11 +1,141 @@
 .card-hover {
-  width: 500px;
+  position: relative;
+  transition: transform 0.4s;
+  position: relative;
+  min-width: 200px;
+  width: 600px;
+  transform-style: preserve-3d !important;
 }
+
 .card-text-hover-show {
   opacity: 0;
   transition: opacity 0.4s ease;
 }
 
-.card-hover:hover > .card-text-hover-show {
+.card:hover > .front .card-text-hover-show {
+  opacity: 1;
+}
+
+.card-hover:hover {
+  z-index: 2;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.card-hover img {
+  width: 100%;
+}
+
+.buttons {
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  bottom: 20px;
+  right: 20px;
+}
+
+.buttons button {
+  transition: transform ease 0.3s;
+}
+
+.buttons button:hover {
+  transform: translateY(-5px);
+}
+
+.buttons button:active {
+  transform: translateY(0px);
+}
+
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.back {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: no-repeat center/100%
+    url("../../../assets/img/portafolio/mobile.png");
+
+  color: whitesmoke;
+  transform: rotateY(180deg);
+  cursor: auto;
+}
+
+.cardsDiv.flipped .card {
+  transform: rotateY(180deg);
+}
+
+.iconArrowCard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 25px;
+  margin-left: 20px;
+  margin-top: 20px;
+  color: rgb(0, 229, 255);
+  transition: transform ease 0.3s;
+  cursor: pointer;
+}
+
+.iconArrowCard:hover {
+  transform: scale(1.2);
+}
+
+.contentInfo {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  margin-left: 30px;
+  width: 90%;
+}
+
+.infoBack {
+  background-color: rgb(255, 255, 255);
+  font-size: 30px;
+  color: black;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  border-radius: 10px;
+}
+
+.tecnologiasProyecto {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: rgba(255, 254, 254, 0.137);
+}
+.tecnologiasProyecto h4 {
+  color: rgb(255, 255, 255);
+  margin-left: 5px;
+  text-align: center;
+}
+
+.tecnologiasProyecto ul {
+  display: flex;
+  margin-top: 10px;
+}
+
+.tecnologiasProyecto li {
+  list-style: none;
+  margin-left: 30px;
+}
+.tecnologiasProyecto li img {
+  width: 40px;
+}
+
+.hover-show-back {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.back:hover > .hover-show-back {
   opacity: 1;
 }

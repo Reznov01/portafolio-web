@@ -12,6 +12,14 @@ export const Menu = () => {
     setIsOpen(!isOpen);
   };
 
+  const menuItems = (key) => {
+    if (key == "home") {
+      const element = document.getElementById("home");
+      element?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <header>
       <div className={`navModal ${isOpen ? "open" : ""}`}>
@@ -61,26 +69,19 @@ export const Menu = () => {
           </div>
         </div>
       </div>
+
       <div className="container-fluid menuMobile">
         <nav className="navbar">
           <GiHamburgerMenu className="burgerIconNav" onClick={navModal} />
           <h1>Rafael Romero</h1>
         </nav>
       </div>
+
       <div className="container menuWeb  ">
         <div className="padreNav">
           <nav className="navbar ">
             <div className="nameTitle">
-              <button
-                onClick={() => {
-                  const element = document.getElementById("home");
-                  element?.scrollIntoView({
-                    behavior: "smooth",
-                  });
-                }}
-              >
-                Rafael Conse
-              </button>
+              <button onClick={""}>Rafael Conse</button>
             </div>
             <div className="enlaces">
               <ul className="nav">

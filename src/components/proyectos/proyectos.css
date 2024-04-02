@@ -4,7 +4,6 @@
 
 .backgroundWave {
   position: absolute;
-  z-index: -1;
 }
 
 .titleProyectos {
@@ -18,6 +17,7 @@
   text-transform: uppercase;
   color: rgb(37, 36, 36);
   box-shadow: black 2px 3px 10px;
+  z-index: 1;
 }
 
 .proyectosCards {
