@@ -21,6 +21,7 @@
 
     min-height: 100vh;
     margin-top: 80px;
+    margin-bottom: -200px;
   }
   .title-habilidades h2 {
     font-size: 45px;

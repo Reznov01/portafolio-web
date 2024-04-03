@@ -21,12 +21,15 @@ export const Header = () => {
             </p>
             <ul className="lista-icons">
               <li>
-                <a href="#">
+                <a
+                  href="https://www.linkedin.com/in/rafael-romero-molina/"
+                  target="_blank"
+                >
                   <img src={LinkedinImg} alt="link linkedin" />
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="https://github.com/Reznov01" target="_blank">
                   <img src={Github} alt="link github" />
                 </a>
               </li>

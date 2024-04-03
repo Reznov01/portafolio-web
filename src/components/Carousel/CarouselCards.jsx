@@ -22,13 +22,13 @@ const CarouselCards = ({ cards }) => {
                 </h2>
                 <div className="certificadosOracleSeccion">
                   <p>{card.info}</p>
-                  <p className="formaciones">
+                  <div className="formaciones">
                     <ul>
                       {card.courses.map((course, idx) => (
                         <li key={idx}>{course}</li>
                       ))}
                     </ul>
-                  </p>
+                  </div>
                 </div>
               </div>
             </div>

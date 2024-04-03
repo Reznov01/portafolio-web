@@ -2,14 +2,10 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background: rgb(220, 218, 218) !important;
 }
 
 .headerbackground {
   background-color: #2f3640;
   min-height: 100vh;
 }
-
-/* .appDiv {
-  display: flex;
-  flex-direction: column;
-} */

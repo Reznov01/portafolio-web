@@ -50,12 +50,13 @@ export default function Experiencia() {
           </p>
         </div>
       </div>
+      <div className="carouselDivCertificados">
+        <CarouselCards cards={cards} cardColors={cardColors} />
+      </div>
       <div className="container certificadosDiv">
         <div className="certificados">
-          <div className="card  cardDiv">
-            <div className="card-body">
-              <CarouselCards cards={cards} cardColors={cardColors} />
-
+          <div className="card  cardDiv ">
+            <div className="card-body containerCardCertificados">
               <div className="certificadosContainer">
                 <h2 className="tituloCertificados">certificados</h2>
                 <div className="certificadoDivision activateC">
@@ -76,7 +77,7 @@ export default function Experiencia() {
                       trabajo estimada de 343 horas.
                     </p>
 
-                    <div className="formaciones">
+                    <div className="formaciones formacionesAlura">
                       <ul>
                         <li>Desarrollo Personal G4</li>
                         <li>ONE Principiante en Programación G4 </li>

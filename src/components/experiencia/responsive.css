@@ -1,78 +1,170 @@
-@media screen and (max-width: 1280px) {
-  .certificadosContainer {
+/* body {
+  overflow: hidden;
+} */
+@media screen and (max-width: 1380px) {
+  .experienciaDiv {
+    height: 110vh;
+  }
+  .carouselDivCertificados {
     display: none;
+  }
+
+  .certificadosDiv .cardDiv {
+    margin-top: 10px;
+  }
+
+  .experiencia {
+    height: 70vh;
+  }
+  .containerCardCertificados {
+    background-color: aliceblue;
+    /* border: 1px solid rgb(220, 220, 220); */
+    border-radius: 10px;
   }
 }
 
 @media screen and (max-width: 990px) {
-  .fn .card {
-    width: 100%; /* Ajusta el ancho de las tarjetas al 100% del contenedor */
-    margin: 0 auto; /* Centra horizontalmente las tarjetas dentro del carrusel */
-    /* background: red; */
+  .certificadosDiv {
+    display: none;
   }
-  .carousel-item {
-    width: 90%; /* Ajusta el ancho de las tarjetas al 90% del contenedor */
-    margin-right: 15px; /* Añade un margen derecho para separar las tarjetas */
+  .carouselDivCertificados {
+    display: block;
+  }
+  .fn .carousel-control-prev,
+  .fn .carousel-control-next {
+    display: none;
+  }
+  .certificadosDiv .cardDiv {
+    margin-top: -50px;
+    position: relative !important;
+  }
+  .cardCarousel {
+    position: relative;
+  }
+  .carouselDivCertificados {
+    position: absolute;
+    width: 750px;
+    min-height: 450px;
+    top: 380px;
+    left: 0;
+  }
+  .carousel-indicators {
+    bottom: 80px !important;
+    left: 60%;
+    width: 80%;
+    /* background-color: red; */
+  }
+
+  .carousel-indicators button {
+    width: 60px !important;
+    height: 5px !important;
+  }
+  .fn .cardCarousel {
+    height: 700px;
+    width: 600px !important;
+    margin: 50px;
+    /* background-color: red; */
+  }
+
+  .certificadoDivision {
+    width: 100%;
+    min-height: 610px;
+  }
+  .certificadosOracleSeccion p {
+    font-size: 30px;
+  }
+  .certificadosOracleSeccion .formaciones {
+    font-size: 30px;
   }
 }
 
 @media screen and (max-width: 414px) {
-  .experienciaDiv {
-    min-height: 100vh;
+  .experiencia p {
+    font-size: 19px;
+    transform: translateY(-30px);
   }
-  .experiencia {
-    height: 70vh;
-    transform: translateY(-100px);
-  }
-  .certificadosDiv .cardDiv {
-    /* background-color: red; */
-    width: 44vh;
-    height: 80%;
-  }
-  .fn .carousel-inner {
-    display: block;
+  .carouselDivCertificados {
+    position: absolute;
+    width: 100%;
 
-    transform: translate(-10%) !important;
+    top: 380px;
+    left: 0;
+    /* background-color: red; */
+  }
+  .fn {
+    height: 450px;
+    width: 80% !important;
   }
   .fn .card {
-    width: 1100px !important;
-    transform: translateX(20px);
+    /* background-color: red; */
+    width: 350px !important;
+    max-width: 360px;
+    margin-left: -5px;
+    margin: 0;
+    margin-left: -5px;
+  }
+  .cardCarousel {
+    height: 450px;
+    width: 210px !important;
+    transform: translateY(-60px);
+  }
+  .carousel {
+    margin-left: -20px;
+  }
+  .certificadoDivision {
+    width: 100%;
+    min-height: 410px;
   }
 
-  .fn {
-    min-width: 110% !important;
-    overflow: hidden;
-  }
-  .fn .carousel-control-prev {
-    transform: translateX(-20px);
-  }
-  .fn .carousel-control-next {
-    transform: translateX(-0px);
-  }
-  .cardDiv {
-    transform: translateY(50px);
-    background-color: red;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .experiencia {
-    height: 70vh;
-    transform: translateY(-100px);
-    margin-top: 60px;
-  }
-  .experiencia p {
+  .certificadosOracleSeccion p {
     font-size: 20px;
   }
+  .certificadosOracleSeccion .formaciones {
+    font-size: 21px;
+  }
 
+  .carousel-indicators {
+    bottom: 10px !important;
+    width: 80%;
+    /* background-color: red; */
+  }
+
+  .carousel-indicators button {
+    width: 40px !important;
+    height: 3px !important;
+  }
+}
+@media screen and (max-width: 390px) {
+  .carousel {
+    margin-left: -20px;
+  }
+}
+@media screen and (max-width: 375px) {
   .fn .card {
-    width: 900px !important;
-    transform: translateX(20px);
+    /* background-color: red; */
+    width: 330px !important;
+    max-width: 360px;
+    margin-left: -5px;
+    margin: 0;
+    margin-left: -5px;
   }
-  .certificadosOracleSeccion p {
-    font-size: 14px;
+  .cardCarousel {
+    height: 450px;
+    width: 210px !important;
+    transform: translateY(-60px);
   }
-  .certificadosDiv .cardDiv {
-    margin-top: 46px;
+  .formaciones ul li {
+    font-size: 19px;
+  }
+  .carousel-indicators {
+    bottom: 20px !important;
+    left: 60%;
+    width: 80%;
+    /* background-color: red; */
+  }
+
+  .carousel-indicators button {
+    width: 40px !important;
+    height: 3px !important;
   }
 }

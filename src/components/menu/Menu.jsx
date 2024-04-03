@@ -81,7 +81,7 @@ export const Menu = () => {
         <div className="padreNav">
           <nav className="navbar ">
             <div className="nameTitle">
-              <button onClick={""}>Rafael Conse</button>
+              <button>Rafael Conse</button>
             </div>
             <div className="enlaces">
               <ul className="nav">

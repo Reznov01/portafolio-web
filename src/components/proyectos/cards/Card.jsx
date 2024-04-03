@@ -45,7 +45,7 @@ export const Card = (props) => {
         </div>
         <div className="back">
           <FaArrowLeft className="iconArrowCard" onClick={handleCard} />
-          <div className={`"hover-show-back ${isClicked ? "show" : ""}`}>
+          <div className={`hover-show-back ${isClicked ? "show" : ""}`}>
             <div className="contentInfo">
               <p className="infoBack">{infoBack}</p>
             </div>
