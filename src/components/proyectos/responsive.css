@@ -8,4 +8,9 @@
   img {
     width: 20px;
   }
+
+  .btn-infos {
+    width: 80px !important;
+    margin-top: 10px;
+  }
 }

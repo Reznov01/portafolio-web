@@ -10,6 +10,7 @@ import javascript from "../../assets/img/habilidades/a6.png";
 import css3 from "../../assets/img/habilidades/a7.png";
 import html from "../../assets/img/habilidades/a8.png";
 import electron from "../../assets/img/habilidades/a9.png";
+import tailwind from "../../assets/img/habilidades/tailwind.png";
 export const Habilidades = () => {
   return (
     <section className="container habilidades" id="habilidadesDiv">
@@ -56,6 +57,10 @@ export const Habilidades = () => {
             <div className="skill">
               <img src={electron} alt="imagen Electronjs" />
               <p>ELECTRON JS</p>
+            </div>
+            <div className="skill">
+              <img src={tailwind} alt="imagen Tailwind" />
+              <p>TAILWIND CSS</p>
             </div>
           </div>
         </div>

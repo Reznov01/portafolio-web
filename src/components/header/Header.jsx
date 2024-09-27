@@ -34,18 +34,20 @@ export const Header = () => {
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="https://flowcv.com/resume/ilte7903b2" target="_blank">
                   <img src={Cv} alt="link Cv" />
                 </a>
               </li>
             </ul>
             <div className="botonDiv">
-              <button className="button">
-                <span className="button_lg">
-                  <span className="button_sl"></span>
-                  <span className="button_text">Descargar CV</span>
-                </span>
-              </button>
+              <a href="../../../public/RESUME.pdf" download>
+                <button className="button">
+                  <span className="button_lg">
+                    <span className="button_sl"></span>
+                    <span className="button_text">Descargar CV</span>
+                  </span>
+                </button>
+              </a>
             </div>
           </div>
           <div className="man">

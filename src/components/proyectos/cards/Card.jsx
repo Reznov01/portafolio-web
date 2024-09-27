@@ -6,9 +6,13 @@ import { FaArrowLeft } from "react-icons/fa";
 export const Card = (props) => {
   const {
     imagen,
+    imagenback,
     title,
     subtitle,
     url,
+    urlGithub,
+    colorTextTitle,
+    colorSubTitle,
     infoBack,
     habilidad_1,
     habilidad_2,
@@ -25,26 +29,47 @@ export const Card = (props) => {
     setIsClicked(!isClicked);
   };
 
+  const handleClick = () => {
+    window.open(url, "_blank");
+  };
   return (
     <div className={`cardsDiv ${flipped ? "flipped" : ""}`}>
       <div className="card bg-dark text-white card-hover">
-        <div className="front">
+        <div className="front" onClick={handleClick}>
           <img src={imagen} className="card-img" alt="..." />
           <div className="card-img-overlay card-text-hover-show">
-            <h5 className="card-title">{title}</h5>
-            <p className="card-text">{subtitle}</p>
+            <h5 className={`card-title " ${colorTextTitle}`}>{title}</h5>
+            <p className={`card-text ${colorSubTitle}`}>{subtitle}</p>
             <div className="buttons">
-              <button className="btn btn-info" onClick={handleCard}>
+              <button
+                className="btn btn-infos"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  handleCard();
+                }}
+              >
                 Mas...
               </button>
-              <a href={url} target="_blank">
-                <button className="btn btn-success">Ir a proyecto</button>
+              <a href={urlGithub} target="_blank">
+                <button
+                  className="btn btn-success "
+                  onClick={(event) => event.stopPropagation()}
+                >
+                  Ir a proyecto
+                </button>
               </a>
             </div>
           </div>
         </div>
         <div className="back">
-          <FaArrowLeft className="iconArrowCard" onClick={handleCard} />
+          <img src={imagenback} className="card-img-back" alt="..." />
+          <FaArrowLeft
+            className="iconArrowCard"
+            onClick={(event) => {
+              event.stopPropagation();
+              handleCard();
+            }}
+          />
           <div className={`hover-show-back ${isClicked ? "show" : ""}`}>
             <div className="contentInfo">
               <p className="infoBack">{infoBack}</p>
