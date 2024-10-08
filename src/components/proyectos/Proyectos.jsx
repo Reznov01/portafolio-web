@@ -7,7 +7,8 @@ import imgProyecto1 from "../../assets/img/portafolio/desktop.png";
 import imgProyecto1back from "../../assets/img/portafolio/mobile.png";
 import imgProyecto2 from "../../assets/img/portafolio/mentor1.png";
 import imgProyecto2back from "../../assets/img/portafolio/mentor2.png";
-import imgProyecto3 from "../../assets/img/portafolio/p3.png";
+import imgProyecto3 from "../../assets/img/portafolio/proyectoInformatica.png";
+import imgProyecto3back from "../../assets/img/portafolio/proyectoInformaticaReverso.png";
 import imgProyecto4 from "../../assets/img/portafolio/p4.png";
 import proximamente from "../../assets/img/portafolio/proximamente.png";
 import git from "../../assets/img/habilidades/a1.png";
@@ -19,6 +20,7 @@ import css3 from "../../assets/img/habilidades/a7.png";
 import html from "../../assets/img/habilidades/a8.png";
 import electron from "../../assets/img/habilidades/a9.png";
 import tailwind from "../../assets/img/habilidades/tailwind.png";
+
 export const Proyectos = () => {
   return (
     <section className="proyectosDiv">
@@ -61,11 +63,14 @@ export const Proyectos = () => {
         />
         <Card
           imagen={imgProyecto3}
-          imagenback={proximamente}
-          url="#"
-          title="Echo con react"
-          subtitle="panle de control admin."
-          infoBack="Proximamente"
+          imagenback={imgProyecto3back}
+          url="https://informaticaromero.netlify.app/"
+          title="Echo con react y Tailwind css"
+          subtitle="aplicacion web para empresa de mantenimiento informatico"
+          infoBack="Solución Web para Empresa de IT
+Creé una aplicación responsive que permite a los clientes solicitar mantenimiento y obtener soporte técnico de manera rápida y eficiente."
+          habilidad_1={react}
+          habilidad_2={tailwind}
         />
         <Card
           imagen={imgProyecto4}
