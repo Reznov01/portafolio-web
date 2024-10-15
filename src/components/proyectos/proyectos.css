@@ -28,3 +28,67 @@
   min-width: 100%;
   margin-top: 40px;
 }
+
+/* boton de primer card */
+
+/* From Uiverse.io by satyamchaudharydev */
+
+.btnFirstCard {
+  --primary-color: #08c8eee8;
+  --secondary-color: #000000;
+  --hover-color: #08c7ee;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 50px !important;
+  color: black;
+  padding: 1em 1.8em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+}
+
+.btnFirstCard .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnFirstCard .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+.btnFirstCard .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+.btnFirstCard:hover {
+  background-color: var(--hover-color);
+}
+
+.btnFirstCard:hover .arrow {
+  background: var(--secondary-color);
+}
+
+.btnFirstCard:hover .arrow:before {
+  right: 0;
+}

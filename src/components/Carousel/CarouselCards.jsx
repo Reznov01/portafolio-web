@@ -7,7 +7,7 @@ const CarouselCards = ({ cards }) => {
     <Carousel className="fn">
       {cards.map((card, index) => (
         <Carousel.Item key={index}>
-          <div className="card cardCarousel">
+          <div className="card cardCarousel ">
             <div className="card-body">
               <h5 className="card-title">{card.title}</h5>
               <p className="card-text">{card.description}</p>

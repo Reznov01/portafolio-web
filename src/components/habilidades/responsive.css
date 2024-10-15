@@ -1,9 +1,5 @@
-/* .habilidades {
-  margin-top: 50px;
-} */
-
 .title-habilidades h2 {
-  font-size: 45px;
+  font-size: 35px;
 }
 
 .contenido-habilidades img {
@@ -18,10 +14,8 @@
 @media screen and (max-width: 414px) {
   .habilidades {
     position: relative;
-
-    min-height: 100vh;
-    margin-top: 80px;
-    margin-bottom: -100px;
+    margin-bottom: 200px;
+    min-height: 100%;
   }
   .title-habilidades h2 {
     font-size: 45px;

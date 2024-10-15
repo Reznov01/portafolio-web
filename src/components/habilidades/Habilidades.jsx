@@ -13,11 +13,14 @@ import electron from "../../assets/img/habilidades/a9.png";
 import tailwind from "../../assets/img/habilidades/tailwind.png";
 export const Habilidades = () => {
   return (
-    <section className="container habilidades" id="habilidadesDiv">
+    <section
+      className="container md:mt-[200px] habilidades "
+      id="habilidadesDiv"
+    >
       <div className="card">
         <div className="card-body habilidades-tecnologias">
-          <div className="title-habilidades">
-            <h2> HABILIDADES</h2>
+          <div className="title-habilidades my-8">
+            <h2> Skills</h2>
           </div>
           <div className="contenido-habilidades">
             <div className="skill">

@@ -1,8 +1,7 @@
 .habilidades {
   display: flex;
   align-items: center;
-  /* background-color: red; */
-  height: 75vh;
+  height: 100%;
 }
 
 .habilidades-tecnologias {

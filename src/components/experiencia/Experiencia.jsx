@@ -4,7 +4,7 @@ import "./responsive.css";
 import CarouselCards from "../Carousel/CarouselCards";
 
 export default function Experiencia() {
-  const cardColors = ["#00a8ff", "#7f8fa6", "#2f3640"]; // Puedes agregar más colores según sea necesario
+  const cardColors = ["#00a8ff", "#7f8fa6", "#2f3640"];
   const cards = [
     {
       institution: "Oracle alura",
@@ -38,7 +38,10 @@ export default function Experiencia() {
   ];
 
   return (
-    <div className="experienciaDiv" id="experienciaDiv">
+    <div
+      className="experienciaDiv mb-[200px] sm:mb-[300px] xl:mb-[200px]"
+      id="experienciaDiv"
+    >
       <div className="experiencia">
         <div className="container">
           <h2>Hola 👋, soy Rafael Romero, Un gusto saludarte</h2>
@@ -50,7 +53,7 @@ export default function Experiencia() {
           </p>
         </div>
       </div>
-      <div className="carouselDivCertificados">
+      <div className="carouselDivCertificados sm:-left-[100px] md:-left-[40px] 2xl:pt-[250px]">
         <CarouselCards cards={cards} cardColors={cardColors} />
       </div>
       <div className="container certificadosDiv">
