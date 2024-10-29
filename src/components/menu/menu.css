@@ -6,7 +6,11 @@ header {
   max-height: 60px;
   overflow: hidden;
 }
-
+.nameTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .nameTitle button {
   background: none;
   border: none;

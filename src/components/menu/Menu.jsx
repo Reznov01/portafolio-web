@@ -81,7 +81,16 @@ export const Menu = () => {
         <div className="padreNav">
           <nav className="navbar ">
             <div className="nameTitle">
-              <button>Rafael Conse</button>
+              <button
+                onClick={() => {
+                  const element = document.getElementById("home");
+                  element?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+              >
+                Rafael Conse
+              </button>
             </div>
             <div className="enlaces">
               <ul className="nav">
