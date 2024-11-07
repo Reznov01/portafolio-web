@@ -91,7 +91,7 @@ export const Proyectos = () => {
                 className="w-[15px] h-[30px] sm:w-[25px] xl:w-[45px] xl:h-[40px]"
               />
               <a
-                href="https://informaticaromero.netlify.app/"
+                href="https://informaticaromero.com/"
                 className="no-underline text-inherit"
                 target="_blanck"
               >
