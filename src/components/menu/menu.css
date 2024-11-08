@@ -13,14 +13,13 @@ header {
 }
 .nameTitle button {
   background: none;
+  text-transform: uppercase;
   border: none;
   text-decoration: none;
   font-size: 28px;
   color: aliceblue;
-  padding-top: 2px;
-  padding-bottom: 6px;
-  text-transform: uppercase;
-  border-bottom: 1px transparent;
+  border-bottom: 1px transparent solid;
+  padding-bottom: 4px;
 }
 
 .navbar {
@@ -43,7 +42,6 @@ header {
 }
 
 ul li button {
-  background: none;
   border: none;
   color: aliceblue;
   margin-left: 8px;
@@ -55,5 +53,4 @@ ul li button {
 ul li button:hover {
   transform: translateY(-2px);
   border-bottom: 1px solid rgba(2, 179, 255, 0.807);
-  padding: none;
 }

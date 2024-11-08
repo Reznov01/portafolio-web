@@ -12,14 +12,6 @@ export const Menu = () => {
     setIsOpen(!isOpen);
   };
 
-  const menuItems = (key) => {
-    if (key == "home") {
-      const element = document.getElementById("home");
-      element?.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  };
   return (
     <header>
       <div className={`navModal ${isOpen ? "open" : ""}`}>
