@@ -4,7 +4,7 @@ import "./carousel.css";
 const CarouselCards = ({ cards }) => {
   const cardColors = ["#00a8ff", "#7f8fa6", "#2f3640"]; // Puedes agregar más colores según sea necesario
   return (
-    <Carousel className="fn">
+    <Carousel className="fn absolute left-1/2 transform -translate-x-1/2">
       {cards.map((card, index) => (
         <Carousel.Item key={index}>
           <div className="card cardCarousel ">

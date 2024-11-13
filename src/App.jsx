@@ -1,6 +1,6 @@
 import "./App.css";
 import { Menu } from "./components/menu/Menu";
-import { Header } from "./components/header/Header";
+import { HeaderHero } from "./components/header/HeaderHero";
 import { Proyectos } from "./components/proyectos/Proyectos";
 import { Habilidades } from "./components/habilidades/Habilidades";
 import Experiencia from "./components/experiencia/Experiencia";
@@ -9,12 +9,17 @@ function App() {
   return (
     <div className="appDiv">
       <Menu />
+      <main className="flex flex-col">
+        <HeaderHero />
 
-      <Header />
-
-      <Proyectos />
-      <Habilidades />
-      <Experiencia />
+        <Proyectos />
+        <section>
+          <Habilidades />
+        </section>
+        <section>
+          <Experiencia />
+        </section>
+      </main>
       <Footer />
     </div>
   );

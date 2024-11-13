@@ -132,19 +132,12 @@
     padding-bottom: 102px;
   }
 
-  .lista-icons {
-    transform: translateX(-40px);
-  }
   .botonDiv {
     transform: translateX(-10px);
   }
 }
 
 @media screen and (max-width: 375px) {
-  .lista-icons li img {
-    width: 40px;
-  }
-
   .content {
     display: flex;
 

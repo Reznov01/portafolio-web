@@ -97,8 +97,8 @@ export const Proyectos = () => {
               >
                 <button className="btnFirstCard  xl:ml-[150px] 2xl:ml-[380px] text-[12px] w-[130px] sm:w-[150px] sm:text-[16px] sm:ml-[150px] sm:p-[16px] p-3 h-5">
                   Ver sitio web
-                  <div class="arrow-wrapper hidden sm:block">
-                    <div class="arrow hidden sm:block"></div>
+                  <div className="arrow-wrapper hidden sm:block">
+                    <div className="arrow hidden sm:block"></div>
                   </div>
                 </button>
               </a>

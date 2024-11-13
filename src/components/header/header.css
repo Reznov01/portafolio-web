@@ -13,8 +13,8 @@
 .lista-icons {
   position: relative;
   display: flex;
-  margin-left: 20%;
-  margin-top: 20px;
+
+  margin-top: 50px;
 }
 
 .lista-icons li {
@@ -34,6 +34,7 @@
 .content {
   display: flex;
   flex-wrap: wrap;
+  border-bottom-left-radius: 2px;
 }
 
 .presentation {
@@ -63,7 +64,7 @@
 
 .presentation p {
   font-size: 22px;
-  color: rgb(154, 152, 156);
+  color: rgb(229, 200, 12);
 }
 
 .presentation .name {
@@ -72,14 +73,10 @@
 
 /* Estilo boton downloads cv */
 
-.botonDiv {
-  position: absolute;
-  top: 60%;
-  left: 30%;
-}
 .button {
   -moz-appearance: none;
   -webkit-appearance: none;
+  width: 220px;
   appearance: none;
   border: none;
   background: none;
@@ -194,14 +191,4 @@
 
 .button:hover .button_lg::after {
   background-color: #fff;
-}
-
-/* Estilos imagen dereche */
-
-.man {
-  margin-left: 50px;
-  /* background-color: red; */
-}
-.man img {
-  width: 600px;
 }

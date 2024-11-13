@@ -39,10 +39,10 @@ export default function Experiencia() {
 
   return (
     <div
-      className="experienciaDiv mb-[200px] sm:mb-[300px] xl:mb-[200px]"
+      className="experienciaDiv mb-[50px] sm:mb-[300px] xl:mb-[200px]"
       id="experienciaDiv"
     >
-      <div className="experiencia">
+      <div className="experiencia ">
         <div className="container">
           <h2>Hola 👋, soy Rafael Romero, Un gusto saludarte</h2>
           <p className="subTextoExperiencia">
@@ -53,7 +53,7 @@ export default function Experiencia() {
           </p>
         </div>
       </div>
-      <div className="carouselDivCertificados sm:-left-[100px] md:-left-[40px] 2xl:pt-[250px]">
+      <div className="carouselDivCertificados w-screen sm:-left-[100px] md:-left-[40px] 2xl:pt-[250px]">
         <CarouselCards cards={cards} cardColors={cardColors} />
       </div>
       <div className="container certificadosDiv">
