@@ -6,22 +6,26 @@ import "./header.css";
 
 export const HeaderHero = () => {
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row relative">
-      {/* Sección Izquierda */}
-      <div className="w-full h-[220px] lg:w-[20%] xl:w-[30%] lg:h-screen bg-[#09c4f6]"></div>
+    <header
+      className="min-h-screen flex flex-col lg:flex-row relative z-0"
+      id="headerHero"
+    >
+      <div className="w-full min-h-[220px] lg:w-[20%] xl:w-[30%] lg:h-screen bg-[#09c4f6]"></div>
 
-      {/* Sección Derecha */}
       <div
         className=" w-full h-full lg:w-[80%] xl:w-[70%] lg:h-screen bg-[#2f3640] content justify-center lg:justify-end lg:pr-5 2xl:pr-0
       2xl:justify-center "
       >
-        <div className="presentation h-[450px] lg:h-[800px] text-center mt-[250px] ">
-          <h1 className="letraColor title">
+        <div className="presentation h-[450px] lg:h-[800px] text-center mt-[250px] text-sm">
+          <h1 className="letraColor title text-md ">
             Descubre mi mundo <span className="digital">digital</span>
           </h1>
-          <p className="letraColor subTitle">
-            <span className="name">Rafael Romero Molina</span> - Desarrollador
-            Web Front-end
+          <p className="text-[16px] sm:text-xl text-yellow-400">
+            {" "}
+            <span className="text-[#00a8ff] text-[16px] sm:text-xl">
+              Rafael Romero Molina
+            </span>{" "}
+            - Desarrollador Web Front-end
           </p>
           <ul className="flex flex-row justify-center gap-12 mr-4 my-5 sm:mr-[4%]  ">
             <li>
@@ -79,6 +83,6 @@ export const HeaderHero = () => {
           className="w-[300px] h-[360px] md:w-[250px] lg:w-[350px] lg:h-[400px] shadow-lg rounded-lg"
         />
       </div>
-    </div>
+    </header>
   );
 };

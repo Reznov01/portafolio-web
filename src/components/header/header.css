@@ -43,7 +43,6 @@
 .presentation .title {
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
-  font-size: 42px;
 }
 .presentation .digital {
   background: #fc00ff; /* fallback for old browsers */
@@ -60,15 +59,6 @@
 
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-}
-
-.presentation p {
-  font-size: 22px;
-  color: rgb(229, 200, 12);
-}
-
-.presentation .name {
-  color: #00a8ff;
 }
 
 /* Estilo boton downloads cv */

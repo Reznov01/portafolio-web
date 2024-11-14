@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   height: 50vh;
+  scroll-margin-top: 200px;
 }
 
 .habilidades-tecnologias {
