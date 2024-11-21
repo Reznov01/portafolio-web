@@ -1,14 +1,15 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import "./proyectos.css";
 import "./responsive.css";
 import wave from "../../assets/img/portafolio/wave.svg";
 import { Card } from "../proyectos/cards/Card";
-import imgProyecto1 from "../../assets/img/portafolio/desktop.png";
-import imgProyecto1back from "../../assets/img/portafolio/mobile.png";
+import imgProyecto1 from "../../assets/img/portafolio/searchTool.png";
+import cardModalAppHunter from "../../assets/img/portafolio/appHunter.png";
+
 import imgProyecto2 from "../../assets/img/portafolio/mentor1.png";
-import imgProyecto2back from "../../assets/img/portafolio/mentor2.png";
+
 import imgProyecto3 from "../../assets/img/portafolio/proyectoInformatica.png";
-import imgProyecto3back from "../../assets/img/portafolio/proyectoInformaticaReverso.png";
+
 import git from "../../assets/img/habilidades/a1.png";
 import node from "../../assets/img/habilidades/a5.png";
 import react from "../../assets/img/habilidades/a3.png";
@@ -18,8 +19,91 @@ import css3 from "../../assets/img/habilidades/a7.png";
 import html from "../../assets/img/habilidades/a8.png";
 import electron from "../../assets/img/habilidades/a9.png";
 import tailwind from "../../assets/img/habilidades/tailwind.png";
-
+import CardModal from "./modal/CardModal";
+import { MdClose } from "react-icons/md";
 export const Proyectos = () => {
+  const [showInfoProyect, setShowInfoProyect] = useState(false);
+  const [proyectId, setProyectId] = useState(null);
+
+  useEffect(() => {
+    // Agregar o eliminar la clase según el estado del modal
+    if (showInfoProyect) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+
+    // Limpiar la clase al desmontar el componente
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, [showInfoProyect]);
+
+  const handleProyects = (e) => {
+    setProyectId(e);
+    setShowInfoProyect(!showInfoProyect);
+    handleScroll();
+  };
+
+  const renderContent = () => {
+    console.info(proyectId);
+    switch (proyectId) {
+      case 1:
+        return (
+          <CardModal
+            url={"https://apphunter-conselab.netlify.app/"}
+            img={cardModalAppHunter}
+            tools={[
+              "HTML",
+              "CSS",
+              "JAVASCRIPT",
+              "ELECTRON JS",
+              "NODE JS",
+              "PYTHON",
+            ]}
+            info="Aplicacion web Y aplicacion .exe para plataforma windows"
+            challange="En este proyecto busque el combinar diferentes tecnologias y fue un reto el usar python y node js para lograr la comunicacion con las apis de windows"
+            solutions="Esta app soluciona el buscar todos los archivos pdf, jpg, y word y los almacena en un  sola carpeta con los distintos archivos por separado en carpetas"
+          />
+        );
+        break;
+      case 2:
+        return (
+          <CardModal
+            url={"https://front-mentor-05.netlify.app/"}
+            img={imgProyecto2}
+            tools={["HTML", "TAILWIND CSS", "JAVASCRIPT"]}
+            info="Componente web para la suscribcion a newslater,"
+            challange="Iniciando con el uso de Tailwind CSS ♥"
+            solutions="Comunicacion continua con los clientes al suscribirse"
+          />
+        );
+        break;
+      case 3:
+        return (
+          <CardModal
+            url={"https://www.informaticaromero.com"}
+            img={imgProyecto3}
+            tools={[
+              "HTML",
+              "CSS",
+              "REACT JS",
+              "TAILWIND CSS",
+              "NODE JS",
+              "MYSQL",
+            ]}
+            info="Aplicacion web para empresa del sector IT especilizada en el mantenimieto y reparacion de equipos informaticos"
+            challange="El principal reto de este proyecto fue: Hacer un panel de administracion donde pueda el admin, crear y modificar articulos para el blog, y ademas pueda hacer un CRUD de los productos de la tienda"
+            solutions="Esta app web ayudo a aumentar las ventas y el alcanze de la marca haciendo la diferencia entre la competencia al tener presencia en el mercado online y poder atender solicitudes las 24h"
+          />
+        );
+        break;
+      default:
+        return null; // Si no coincide, no muestra nada.
+    }
+  };
+
+  console.log(proyectId);
   return (
     <section className="proyectosDiv min-h-[100%]  sm:pb-20">
       <img src={wave} alt="background" className="backgroundWave " />
@@ -106,8 +190,8 @@ export const Proyectos = () => {
           </div>
         </div>
         <Card
+          id={1}
           imagen={imgProyecto1}
-          imagenback={imgProyecto1back}
           title="App Hunter"
           subtitle='Herramienta para windows "busqueda de archivos" '
           url="https://apphunter-conselab.netlify.app/"
@@ -119,10 +203,11 @@ export const Proyectos = () => {
           habilidad_4={node}
           habilidad_5={electron}
           habilidad_6={python}
+          handleProyects={handleProyects}
         />
         <Card
+          id={2}
           imagen={imgProyecto2}
-          imagenback={imgProyecto2back}
           title="Estilizado tailwind css"
           colorTextTitle="text-black"
           colorSubTitle="text-black"
@@ -133,18 +218,47 @@ export const Proyectos = () => {
           habilidad_1={html}
           habilidad_2={tailwind}
           habilidad_3={javascript}
+          handleProyects={handleProyects}
         />
         <Card
+          id={3}
           imagen={imgProyecto3}
-          imagenback={imgProyecto3back}
-          url="https://informaticaromero.netlify.app/"
-          title="Echo con react y Tailwind css"
+          url="https://informaticaromero.com/"
+          title="Informatica Romero"
           subtitle="aplicacion web para empresa de mantenimiento informatico"
           infoBack="Solución Web para Empresa de IT
 Creé una aplicación responsive que permite a los clientes solicitar mantenimiento y obtener soporte técnico de manera rápida y eficiente."
           habilidad_1={react}
           habilidad_2={tailwind}
+          handleProyects={handleProyects}
         />
+      </div>
+      <div
+        onClick={(e) => {
+          // Verifica que el clic fue en el contenedor principal, no en el contenido interno
+          if (e.target === e.currentTarget) {
+            setShowInfoProyect(false);
+          }
+        }}
+        className={`${
+          showInfoProyect
+            ? "fixed  inset-0 bg-[#000000e7]  flex items-center justify-center z-50"
+            : "hidden"
+        }`}
+      >
+        <div className="bg-[#0f0f10] w-11/12 h-[90vh] max-w-4xl p-6 rounded-lg shadow-lg relative border-x-2 border-x-gray-500 mt-10 overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900 scrollbar-thumb-rounded-full scrollbar-track-rounded-full animate-fade-down animate-duration-300 ">
+          {/* Botón para cerrar el modal */}
+
+          <button
+            type="button"
+            onClick={() => setShowInfoProyect(false)}
+            className="sticky top-1 left-[98%]  "
+          >
+            <MdClose className="text-red-500 font-bold text-2xl hover:scale-125 transition-all " />
+          </button>
+
+          {renderContent()}
+        </div>
       </div>
     </section>
   );
