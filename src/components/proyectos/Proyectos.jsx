@@ -61,9 +61,9 @@ export const Proyectos = () => {
               "NODE JS",
               "PYTHON",
             ]}
-            info="Aplicacion web Y aplicacion .exe para plataforma windows"
-            challange="En este proyecto busque el combinar diferentes tecnologias y fue un reto el usar python y node js para lograr la comunicacion con las apis de windows"
-            solutions="Esta app soluciona el buscar todos los archivos pdf, jpg, y word y los almacena en un  sola carpeta con los distintos archivos por separado en carpetas"
+            info="Aplicación web Y aplicación .exe para plataforma Windows"
+            challange="En este proyecto busqué el combinar diferentes tecnologías y fue un reto el usar Python y Node js para lograr la comunicación con las apis de Windows"
+            solutions="Esta app soluciona el buscar todos los archivos PDF, JPG, y Word y los almacena en una sola carpeta con los distintos archivos por separado en carpetas"
           />
         );
         break;
@@ -73,9 +73,9 @@ export const Proyectos = () => {
             url={"https://front-mentor-05.netlify.app/"}
             img={imgProyecto2}
             tools={["HTML", "TAILWIND CSS", "JAVASCRIPT"]}
-            info="Componente web para la suscribcion a newslater,"
+            info="Componente web para la suscripción a la newsletter."
             challange="Iniciando con el uso de Tailwind CSS ♥"
-            solutions="Comunicacion continua con los clientes al suscribirse"
+            solutions="Comunicación continua con los clientes al suscribirse"
           />
         );
         break;
@@ -92,9 +92,9 @@ export const Proyectos = () => {
               "NODE JS",
               "MYSQL",
             ]}
-            info="Aplicacion web para empresa del sector IT especilizada en el mantenimieto y reparacion de equipos informaticos"
-            challange="El principal reto de este proyecto fue: Hacer un panel de administracion donde pueda el admin, crear y modificar articulos para el blog, y ademas pueda hacer un CRUD de los productos de la tienda"
-            solutions="Esta app web ayudo a aumentar las ventas y el alcanze de la marca haciendo la diferencia entre la competencia al tener presencia en el mercado online y poder atender solicitudes las 24h"
+            info="Aplicación web para empresa del sector IT especializada en el mantenimiento y reparación de equipos informáticos"
+            challange="El principal reto de este proyecto fue: Hacer un panel de administración donde pueda el administrador crear y modificar artículos para el blog, y además pueda hacer un CRUD de los productos de la tienda"
+            solutions="Esta app web ayudó a aumentar las ventas y el alcance de la marca, haciendo la diferencia entre la competencia al tener presencia en el mercado online y poder atender solicitudes las 24 h."
           />
         );
         break;
@@ -128,21 +128,21 @@ export const Proyectos = () => {
             </div>
             <div className="w-[90%] text-sm  mt-10 mx-auto sm:text-lg 2xl:w-[90ch] xl:text-lg">
               <p>
-                Aplicacion web para empresa del sector IT especilizada en el
-                mantenimieto y reparacion de equipos informaticos
+                Aplicación web para empresa del sector IT especializada en el
+                mantenimiento y reparación de equipos informáticos
               </p>
               <p>
                 <span className="text-blue-300 font-bold">
                   El principal reto de este proyecto fue
                 </span>
-                : Hacer un panel de administracion donde pueda el admin, crear y
-                modificar articulos para el blog, y ademas pueda hacer un CRUD
-                de los productos de la tienda
+                : Hacer un panel de administración donde pueda el administrador
+                crear y modificar artículos para el blog, y además pueda hacer
+                un CRUD de los productos de la tienda
               </p>
               <p>
-                El SEO de la pagina es sumamente importante, aplique practicas
-                de semantica y Accesibilidad a si como un diseño tatalmente
-                responsivo para todos los dispositivos de usuarios
+                El SEO de la página es sumamente importante, apliqué prácticas
+                De semántica y accesibilidad a sí como un diseño totalmente
+                Responsivo para todos los dispositivos de usuarios
               </p>
             </div>
             <div className="px-3 sm:ml-3 xl:ml-5 2xl:ml-24 2xl:mt-10">
@@ -195,14 +195,6 @@ export const Proyectos = () => {
           title="App Hunter"
           subtitle='Herramienta para windows "busqueda de archivos" '
           url="https://apphunter-conselab.netlify.app/"
-          urlGithub="https://github.com/Reznov01/portafolio-web"
-          infoBack="Busca los archivos de su computadora, imagenes pdf y videos. para tener su informacion centralizada y de facil acceso"
-          habilidad_1={html}
-          habilidad_2={css3}
-          habilidad_3={javascript}
-          habilidad_4={node}
-          habilidad_5={electron}
-          habilidad_6={python}
           handleProyects={handleProyects}
         />
         <Card
@@ -211,13 +203,8 @@ export const Proyectos = () => {
           title="Estilizado tailwind css"
           colorTextTitle="text-black"
           colorSubTitle="text-black"
-          subtitle="Componente para suscripción de newslater"
-          infoBack="Desafio de practica de Front Mentor."
+          subtitle="Componente para suscripción de newsletter"
           url="https://front-mentor-05.netlify.app/"
-          urlGithub="https://github.com/Reznov01/Newslatter-component"
-          habilidad_1={html}
-          habilidad_2={tailwind}
-          habilidad_3={javascript}
           handleProyects={handleProyects}
         />
         <Card
@@ -225,9 +212,7 @@ export const Proyectos = () => {
           imagen={imgProyecto3}
           url="https://informaticaromero.com/"
           title="Informatica Romero"
-          subtitle="aplicacion web para empresa de mantenimiento informatico"
-          infoBack="Solución Web para Empresa de IT
-Creé una aplicación responsive que permite a los clientes solicitar mantenimiento y obtener soporte técnico de manera rápida y eficiente."
+          subtitle="Aplicación web para empresa de mantenimiento informático"
           habilidad_1={react}
           habilidad_2={tailwind}
           handleProyects={handleProyects}
