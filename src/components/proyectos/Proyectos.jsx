@@ -6,7 +6,7 @@ import { Card } from "../proyectos/cards/Card";
 import imgProyecto1 from "../../assets/img/portafolio/searchTool.png";
 import cardModalAppHunter from "../../assets/img/portafolio/appHunter.png";
 
-import imgProyecto2 from "../../assets/img/portafolio/mentor1.png";
+import imgProyecto2 from "../../assets/img/portafolio/proyectoDotDager.png";
 
 import imgProyecto3 from "../../assets/img/portafolio/proyectoInformatica.png";
 
@@ -70,12 +70,13 @@ export const Proyectos = () => {
       case 2:
         return (
           <CardModal
-            url={"https://front-mentor-05.netlify.app/"}
+            url={"https://dot-dager-mocha.vercel.app/"}
             img={imgProyecto2}
-            tools={["HTML", "TAILWIND CSS", "JAVASCRIPT"]}
-            info="Componente web para la suscripción a la newsletter."
-            challange="Iniciando con el uso de Tailwind CSS ♥"
-            solutions="Comunicación continua con los clientes al suscribirse"
+            tools={["REACT JS", "TAILWIND CSS"]}
+            info="Landing Page para influencer DotDager"
+            challange="DotDager lanzó un reto de crear una SPA (Single Page Aplication) en solo 2 días sin olvidar el diseño responsivo. El principal reto fue el tiempo
+            Y el integrar un juego que le gusta dentro de la misma página."
+            solutions="Con esta página se espera tener más alcance digital, con un estilo divertido y fresco."
           />
         );
         break;
