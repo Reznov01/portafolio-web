@@ -66,7 +66,7 @@ export const Proyectos = () => {
             solutions="Esta app soluciona el buscar todos los archivos PDF, JPG, y Word y los almacena en una sola carpeta con los distintos archivos por separado en carpetas"
           />
         );
-        break;
+
       case 2:
         return (
           <CardModal
@@ -75,11 +75,11 @@ export const Proyectos = () => {
             tools={["REACT JS", "TAILWIND CSS"]}
             info="Landing Page para influencer DotDager"
             challange="DotDager lanzó un reto de crear una SPA (Single Page Aplication) en solo 2 días sin olvidar el diseño responsivo. El principal reto fue el tiempo
-            Y el integrar un juego que le gusta dentro de la misma página."
+             Y el integrar un juego que le gusta dentro de la misma página."
             solutions="Con esta página se espera tener más alcance digital, con un estilo divertido y fresco."
           />
         );
-        break;
+
       case 3:
         return (
           <CardModal
@@ -98,7 +98,7 @@ export const Proyectos = () => {
             solutions="Esta app web ayudó a aumentar las ventas y el alcance de la marca, haciendo la diferencia entre la competencia al tener presencia en el mercado online y poder atender solicitudes las 24 h."
           />
         );
-        break;
+
       default:
         return null; // Si no coincide, no muestra nada.
     }
