@@ -13,7 +13,7 @@ export const Menu = () => {
   };
 
   return (
-    <nav className=" sticky top-0 z-10">
+    <nav className=" sticky top-0 z-50">
       <div className={` z-10 fixed ${isOpen ? "block" : "hidden"}`}>
         {/* Nav mobile toggle options */}
         <div className="navModal animate-fade-right animate-duration-200 animate-ease-out">
@@ -128,7 +128,7 @@ export const Menu = () => {
                       });
                     }}
                   >
-                    Experiencia
+                    Sobre Mi
                   </button>
                 </li>
               </ul>

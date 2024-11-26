@@ -21,6 +21,8 @@ import electron from "../../assets/img/habilidades/a9.png";
 import tailwind from "../../assets/img/habilidades/tailwind.png";
 import CardModal from "./modal/CardModal";
 import { MdClose } from "react-icons/md";
+import { motion } from "framer-motion";
+
 export const Proyectos = () => {
   const [showInfoProyect, setShowInfoProyect] = useState(false);
   const [proyectId, setProyectId] = useState(null);
@@ -111,11 +113,17 @@ export const Proyectos = () => {
 
       <div className="container md:pb-20 xl:-mb-40" id="proyectosDiv">
         <div className="titleProyectos">
-          <h2>Proyectos</h2>
+          <h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+            Proyectos
+          </h2>
         </div>
       </div>
       <div className="proyectosCards proyectos md:-mb-28 ">
-        <div className="w-[96%] z-1 rounded-2xl xl:h-[500px] bg-slate-800  flex  flex-wrap sm:mt-20 lg:mt-32">
+        <motion.div
+          className="w-[96%] z-1 rounded-2xl xl:h-[500px] bg-slate-800  flex  flex-wrap sm:mt-20 lg:mt-32"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, transition: { duration: 0.5 } }}
+        >
           <div className="xl:w-2/5 flex items-center justify-center h-[300px] sm:mb-24 md:mb-36 lg:mb-[250px] xl:h-full ">
             <img
               src={imgProyecto3}
@@ -189,36 +197,53 @@ export const Proyectos = () => {
               </a>
             </div>
           </div>
-        </div>
-        <Card
-          id={1}
-          imagen={imgProyecto1}
-          title="App Hunter"
-          subtitle='Herramienta para windows "busqueda de archivos" '
-          url="https://apphunter-conselab.netlify.app/"
-          handleProyects={handleProyects}
-        />
-        <Card
-          id={2}
-          imagen={imgProyecto2}
-          title="Estilizado tailwind css"
-          colorTextTitle="text-black"
-          colorSubTitle="text-black"
-          subtitle="Componente para suscripción de newsletter"
-          url="https://front-mentor-05.netlify.app/"
-          handleProyects={handleProyects}
-        />
-        <Card
-          id={3}
-          imagen={imgProyecto3}
-          url="https://informaticaromero.com/"
-          title="Informatica Romero"
-          subtitle="Aplicación web para empresa de mantenimiento informático"
-          habilidad_1={react}
-          habilidad_2={tailwind}
-          handleProyects={handleProyects}
-        />
+        </motion.div>
+
+        <motion.div
+          initial={{ x: "-90%", opacity: 0 }}
+          whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
+        >
+          <Card
+            id={1}
+            imagen={imgProyecto1}
+            title="App Hunter"
+            subtitle='Herramienta para windows "busqueda de archivos" '
+            url="https://apphunter-conselab.netlify.app/"
+            handleProyects={handleProyects}
+          />
+        </motion.div>
+        <motion.div
+          initial={{ y: 200, opacity: 0 }}
+          whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
+        >
+          <Card
+            id={2}
+            imagen={imgProyecto2}
+            title="Estilizado tailwind css"
+            colorTextTitle="text-black"
+            colorSubTitle="text-black"
+            subtitle="Componente para suscripción de newsletter"
+            url="https://front-mentor-05.netlify.app/"
+            handleProyects={handleProyects}
+          />
+        </motion.div>
+        <motion.div
+          initial={{ x: "90%", opacity: 0 }}
+          whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
+        >
+          <Card
+            id={3}
+            imagen={imgProyecto3}
+            url="https://informaticaromero.com/"
+            title="Informatica Romero"
+            subtitle="Aplicación web para empresa de mantenimiento informático"
+            habilidad_1={react}
+            habilidad_2={tailwind}
+            handleProyects={handleProyects}
+          />
+        </motion.div>
       </div>
+
       <div
         onClick={(e) => {
           // Verifica que el clic fue en el contenedor principal, no en el contenido interno

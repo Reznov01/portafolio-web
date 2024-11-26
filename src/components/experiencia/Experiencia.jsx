@@ -46,9 +46,9 @@ export default function Experiencia() {
         <div className="container">
           <h2>Hola 👋, soy Rafael Romero, Un gusto saludarte</h2>
           <p className="subTextoExperiencia">
-            Un desarrollador web front-end autodidacta. Mi enfoque se centra en
-            transformar desafíos en oportunidades, reflejando en mi portafolio
-            la fusión de creatividad y esfuerzo que define mi viaje en el
+            Un desarrollador web Front-End autodidacta. Mi enfoque se centra en
+            transformar desafíos en oportunidades, reflejado en mi portafolio la
+            fusión de creatividad y esfuerzo que define mi viaje en él
             desarrollo web.
           </p>
         </div>

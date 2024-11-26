@@ -2,8 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50vh;
-  scroll-margin-top: 200px;
+
+  scroll-margin-top: 20px;
 }
 
 .habilidades-tecnologias {
@@ -11,26 +11,33 @@
   flex-direction: column;
 }
 
-.title-habilidades {
-  width: 100%;
-  text-align: center;
-}
-
-.skill {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  width: 200px;
-}
 .contenido-habilidades {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
 }
 
-.skill img {
-  width: 100%;
-  margin-bottom: 20px;
+.contenido-habilidades .skill {
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+}
+
+.contenido-habilidades .skill img {
+  width: 150px;
+  height: 170px;
+  margin: 0px 20px;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 650px) {
+  .contenido-habilidades .skill img {
+    width: 80px;
+    height: 70px;
+    margin-bottom: 20px;
+  }
+  .skill p {
+    margin-left: 0px;
+  }
 }

@@ -2,18 +2,19 @@ import avatar from "../../assets/img/avatar.png";
 import LinkedinImg from "../../assets/img/linkedin.png";
 import Github from "../../assets/img/github.png";
 import Cv from "../../assets/img/resume.png";
+import { motion } from "framer-motion";
 import "./header.css";
 
 export const HeaderHero = () => {
   return (
     <header
-      className="min-h-screen flex flex-col lg:flex-row relative z-0"
+      className="header  animation min-h-[852px] sm:min-h-screen flex flex-col lg:flex-row relative z-0"
       id="headerHero"
     >
       <div className="w-full min-h-[220px] lg:w-[20%] xl:w-[30%] lg:h-screen bg-[#09c4f6]"></div>
 
       <div
-        className=" w-full h-full lg:w-[80%] xl:w-[70%] lg:h-screen bg-[#2f3640] content justify-center lg:justify-end lg:pr-5 2xl:pr-0
+        className=" w-full h-full lg:w-[80%] xl:w-[70%] lg:h-screen bg-[#2f3640] xl:pr-20  content justify-center lg:justify-end lg:pr-5 2xl:pr-0
       2xl:justify-center "
       >
         <div className="presentation h-[450px] lg:h-[800px] text-center mt-[250px] text-sm">
@@ -25,10 +26,10 @@ export const HeaderHero = () => {
             <span className="text-[#00a8ff] text-[16px] sm:text-xl">
               Rafael Romero Molina
             </span>{" "}
-            - Desarrollador Web Front-end
+            - Desarrollador Web Front-End
           </p>
           <ul className="flex flex-row justify-center gap-12 mr-4 my-5 sm:mr-[4%]  ">
-            <li>
+            <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <a
                 href="https://www.linkedin.com/in/rafael-romero-molina/"
                 target="_blank"
@@ -40,8 +41,8 @@ export const HeaderHero = () => {
                   className="w-[33px] h-[33px] md:w-[48px] md:h-[48px]  "
                 />
               </a>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <a href="https://github.com/Reznov01" target="_blank">
                 <img
                   src={Github}
@@ -50,8 +51,8 @@ export const HeaderHero = () => {
                   className="w-[33px] h-[33px]  md:w-[48px] md:h-[48px]"
                 />
               </a>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <a href="https://flowcv.com/resume/o8e3ouot8b" target="_blank">
                 <img
                   src={Cv}
@@ -60,7 +61,7 @@ export const HeaderHero = () => {
                   className="w-[33px] h-[33px]  md:w-[48px] md:h-[48px]"
                 />
               </a>
-            </li>
+            </motion.li>
           </ul>
           <div className="botonDiv mt-16 ">
             <a href="../../../public/cvPersonal.pdf" download>
