@@ -48,7 +48,6 @@ export const Proyectos = () => {
   };
 
   const renderContent = () => {
-    console.info(proyectId);
     switch (proyectId) {
       case 1:
         return (
@@ -108,7 +107,7 @@ export const Proyectos = () => {
 
   console.log(proyectId);
   return (
-    <section className="proyectosDiv min-h-[100%]  sm:pb-20">
+    <section className="proyectosDiv min-h-[100%]  sm:pb-20 overflow-x-hidden">
       <img src={wave} alt="background" className="backgroundWave " />
 
       <div className="container md:pb-20 xl:-mb-40" id="proyectosDiv">
