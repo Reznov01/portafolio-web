@@ -22,7 +22,7 @@ export const Habilidades = () => {
         <h2 className="text-4xl sm:text-8xl font-medium ">Skills</h2>
       </div>
 
-      <div className="bg-slate-800 w-[95%] px-2 py-4 md:p-2 mt-10 rounded-md text-white  shadow-[-16px_41px_32px_10px_#00000024]">
+      <div className="bg-slate-800 mx-auto w-[95%] px-2 py-4 md:p-2 mt-10 rounded-md text-white  shadow-[-16px_41px_32px_10px_#00000024]">
         <div className="card-body habilidades-tecnologias">
           <div className="flex flex-wrap  sm:w-auto gap-4 justify-center w-full">
             <div className="flex flex-col items-center gap-2">
