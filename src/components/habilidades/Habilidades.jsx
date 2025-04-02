@@ -15,7 +15,7 @@ import tailwind from "../../assets/img/habilidades/tailwind.png";
 export const Habilidades = () => {
   return (
     <section
-      className="container my-20 h-[50vh]  md:my-36 flex flex-col "
+      className="container my-20 h-[50vh]  md:my-36 flex flex-col scroll-mt-28 "
       id="habilidadesDiv"
     >
       <div className="text-center w-full h-30">

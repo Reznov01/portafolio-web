@@ -2,9 +2,9 @@ import { GraduationCap } from "lucide-react"
 
 export default function PortfolioSection() {
   return (
-    <div className="relative mt-32">
+    <div className="relative mt-32 sm:mt-[350px]  lg:mt-32 sm:scroll-mt-12" id="certificadosDiv"> 
       {/* Background Section - 50vh height */}
-      <div className="w-full h-[50vh] bg-gradient-to-b from-violet-700 to-violet-700 via-violet-600">
+      <div className="w-full h-[60vh] sm:h-[50vh] bg-gradient-to-b from-violet-700 to-violet-700 via-violet-600">
         {/* Header Section */}
         <div className="container mx-auto px-4 py-12 text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
@@ -20,7 +20,7 @@ export default function PortfolioSection() {
       </div>
 
       {/* Certificates Section - Positioned to overlap with the background */}
-      <div className="container mx-auto px-4 relative -mt-[20vh] pb-20 ">
+      <div className="container mx-auto px-4 relative -mt-[10vh] sm:-mt-[16vh] pb-20 ">
         <div className="bg-white rounded-xl shadow-xl overflow-hidden max-w-8xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-center py-6 text-gray-800">Certificados</h2>
 

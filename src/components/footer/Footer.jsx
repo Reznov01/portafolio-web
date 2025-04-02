@@ -34,7 +34,7 @@ export default function Footer() {
             <ul className="space-y-2 ">
               <li>
                 <a 
-                  href="#inicio" 
+                  href="#headerHero" 
                   className="hover:text-green-400 transition-all duration-300 flex -ml-8 no-underline text-cyan-300"
                   style={{ transition: 'all 0.3s ease' }}
                   onMouseOver={(e) => Object.assign(e.currentTarget.style, linkHoverStyle)}
@@ -48,7 +48,7 @@ export default function Footer() {
               </li>
               <li>
                 <a 
-                  href="#proyects" 
+                  href="#proyectosDiv" 
                   className="hover:text-green-400 transition-all duration-300 -ml-8 flex items-center no-underline text-cyan-300"
                   style={{ transition: 'all 0.3s ease' }}
                   onMouseOver={(e) => Object.assign(e.currentTarget.style, linkHoverStyle)}
@@ -62,7 +62,7 @@ export default function Footer() {
               </li>
               <li>
                 <a 
-                  href="#" 
+                  href="#certificadosDiv" 
                   className="hover:text-green-400 transition-all duration-300 -ml-8 flex items-center no-underline text-cyan-300"
                   style={{ transition: 'all 0.3s ease' }}
                   onMouseOver={(e) => Object.assign(e.currentTarget.style, linkHoverStyle)}
@@ -74,20 +74,7 @@ export default function Footer() {
                   Certificados
                 </a>
               </li>
-              <li>
-                <a 
-                  href="#certificados" 
-                  className="hover:text-green-400 transition-all duration-300 flex  -ml-8 items-center no-underline text-cyan-300"
-                  style={{ transition: 'all 0.3s ease' }}
-                  onMouseOver={(e) => Object.assign(e.currentTarget.style, linkHoverStyle)}
-                  onMouseOut={(e) => e.currentTarget.style.transform = ''}
-                >
-                  <span className="mr-2 flex items-center">
-                    <User className="w-4 h-4 mr-1" />
-                  </span> 
-                  Sobre mí
-                </a>
-              </li>
+             
               
             </ul>
           </div>

@@ -47,14 +47,14 @@ export const Menu = () => {
             <li className="nav-link">
               <button
                 onClick={() => {
-                  const element = document.getElementById("experienciaDiv");
+                  const element = document.getElementById("certificadosDiv");
                   element?.scrollIntoView({
                     behavior: "smooth",
                   });
                   navModal();
                 }}
               >
-                Experiencia
+                Sobre Mi
               </button>
             </li>
           </ul>
@@ -122,7 +122,7 @@ export const Menu = () => {
                 <li className="nav-link">
                   <button
                     onClick={() => {
-                      const element = document.getElementById("experienciaDiv");
+                      const element = document.getElementById("certificadosDiv");
                       element?.scrollIntoView({
                         behavior: "smooth",
                       });

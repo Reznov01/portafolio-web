@@ -197,6 +197,7 @@ export const Proyectos = () => {
             </div>
           </div>
         </motion.div>
+    <div className="z-10 gap-3 flex flex-col xl:flex-row flex-wrap">
 
         <motion.div
           initial={{ x: "-90%", opacity: 0 }}
@@ -241,6 +242,7 @@ export const Proyectos = () => {
             handleProyects={handleProyects}
           />
         </motion.div>
+    </div>
       </div>
 
       <div
