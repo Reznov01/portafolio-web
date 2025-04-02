@@ -1,119 +1,33 @@
-.experienciaDiv {
-  position: relative;
-  min-height: 80vh;
-  padding-top: 60px;
-  margin-top: 40px;
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
-.about .card {
-  height: 400px;
-}
-
-.experiencia {
-  padding-top: 40px;
-  background-color: #6e07f3;
-  height: 50vh;
-  text-align: center;
-  color: white;
-}
-
-.experiencia p {
-  font-size: 25px;
-  padding-top: 50px;
-}
-
-.certificadosDiv {
-  position: absolute;
-  top: 40%;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
-
-.certificados .card {
-  height: 50vh;
-  padding-bottom: 20px;
-}
-
-.tituloCertificados {
-  position: absolute;
-  text-align: center;
-  font-size: 42px;
-  left: 40%;
-}
-.certificados .card-body {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-
-.certificadosContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-
-/* .certificadoscontainer> .activateC  {
-  background-color: red;
-} */
-.certificadoDivision {
-  width: 33%;
-  border-radius: 10px;
-  margin-top: 60px;
-}
-
-.activateC {
-  background-color: #2f3640;
-}
-
-.aluraC {
-  background-color: #00a8ff;
-}
-
-.otroC {
-  background-color: #7f8fa6;
-}
-
-.activateC,
-.aluraC,
-.otroC {
-  color: aliceblue;
-  text-align: center;
-}
-.certificadosActivateSeccion {
-  padding: 0px 15px;
-}
-.certificadosActivateSeccion p {
-  font-size: 19px;
-  text-align: start;
-}
-.iconC {
-  font-size: 30px;
-}
-
-.certificadosOracleSeccion {
-  padding: 0px 15px;
-}
-
-.certificadosOracleSeccion p {
-  font-size: 19px;
-  text-align: start;
-}
-
-.formaciones ul {
-  text-align: start;
-  margin-left: 25px;
-}
-.otroC ul {
-  text-align: start;
-  margin-left: 20px;
-}
-
-.otroC li {
-  font-size: 25px;
-}
-
-.otroC ::marker {
-  color: gold;
+.animate-wave {
+  animation: wave 2.5s infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
 }

@@ -107,7 +107,7 @@ export const Proyectos = () => {
 
   console.log(proyectId);
   return (
-    <section className="proyectosDiv min-h-[100%]  sm:pb-20 overflow-x-hidden">
+    <section className="proyectosDiv min-h-[100%]  sm:pb-20 overflow-hidden ">
       <img src={wave} alt="background" className="backgroundWave " />
 
       <div className="container md:pb-20 xl:-mb-40" id="proyectosDiv">

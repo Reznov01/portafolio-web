@@ -1,114 +1,121 @@
-import React from "react";
-import "./experiencia.css";
-import "./responsive.css";
-import CarouselCards from "../Carousel/CarouselCards";
+import { GraduationCap } from "lucide-react"
 
-export default function Experiencia() {
-  const cardColors = ["#00a8ff", "#7f8fa6", "#2f3640"];
-  const cards = [
-    {
-      institution: "Oracle alura",
-      info: "Rafael Romero ha completado 6 formaciones con una carga de trabajo de 343 horas.",
-      courses: [
-        "Desarrollo Personal G4",
-        "ONE Principiante en Programación G4",
-        "ONE Front End G4",
-        "ONE React G4",
-        "ONE Emprendimiento G4",
-        "ONE Business Agility G4",
-      ],
-    },
-    // Agrega detalles para las otras tarjetas aquí
-    {
-      institution: "Otros",
-
-      courses: [
-        "Sololearn - React + Redux",
-        "Sololearn - Responsive web design",
-        "Sololearn - PHP",
-        "Sololearn - Jquery",
-        "Freecodecamp - JavaScript Algorithms and Data Structures",
-      ],
-    },
-    {
-      institution: "Google Activate",
-
-      courses: ["Curso de introducción al desarrollo web: HTML y CSS"],
-    },
-  ];
-
+export default function PortfolioSection() {
   return (
-    <div
-      className="experienciaDiv mb-[50px] sm:mb-[300px] xl:mb-[200px]"
-      id="experienciaDiv"
-    >
-      <div className="experiencia ">
-        <div className="container">
-          <h2>Hola 👋, soy Rafael Romero, Un gusto saludarte</h2>
-          <p className="subTextoExperiencia">
-            Un desarrollador web Front-End autodidacta. Mi enfoque se centra en
-            transformar desafíos en oportunidades, reflejado en mi portafolio la
-            fusión de creatividad y esfuerzo que define mi viaje en él
-            desarrollo web.
+    <div className="relative mt-32">
+      {/* Background Section - 50vh height */}
+      <div className="w-full h-[50vh] bg-gradient-to-b from-violet-700 to-violet-700 via-violet-600">
+        {/* Header Section */}
+        <div className="container mx-auto px-4 py-12 text-center">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+            Hola <span className="inline-block animate-wave">👋</span>, soy Rafael Romero
+            <span className="block mt-2 text-xl md:text-2xl font-medium">Un gusto saludarte</span>
+          </h1>
+
+          <p className="max-w-3xl mx-auto text-white/90 text-base md:text-lg mt-6 leading-relaxed">
+            Un desarrollador web Front-End autodidacta. Mi enfoque se centra en transformar desafíos en oportunidades,
+            reflejado en mi portafolio la fusión de creatividad y esfuerzo que define mi viaje en el desarrollo web.
           </p>
         </div>
       </div>
-      <div className="carouselDivCertificados w-screen sm:-left-[100px] md:-left-[40px] 2xl:pt-[250px]">
-        <CarouselCards cards={cards} cardColors={cardColors} />
-      </div>
-      <div className="container certificadosDiv">
-        <div className="certificados">
-          <div className="card  cardDiv ">
-            <div className="card-body containerCardCertificados">
-              <div className="certificadosContainer">
-                <h2 className="tituloCertificados">certificados</h2>
-                <div className="certificadoDivision activateC">
-                  <h2>
-                    <span className="iconC">🎓 </span>Google activate
-                  </h2>
-                  <div className="certificadosActivateSeccion">
-                    <p>Curso de introducción al desarrollo web: HTML y CSS</p>
-                  </div>
-                </div>
-                <div className="certificadoDivision aluraC">
-                  <h2>
-                    <span className="iconC">🎓 </span>Oracle alura
-                  </h2>
-                  <div className="certificadosOracleSeccion">
-                    <p>
-                      Rafael Romero ha completado 6 formaciones con una carga de
-                      trabajo estimada de 343 horas.
-                    </p>
 
-                    <div className="formaciones formacionesAlura">
-                      <ul>
-                        <li>Desarrollo Personal G4</li>
-                        <li>ONE Principiante en Programación G4 </li>
-                        <li>ONE Front End G4</li>
-                        <li>ONE React G4</li>
-                        <li>ONE Emprendimiento G4</li>
-                        <li>ONE Business Agility G4</li>
-                      </ul>
-                    </div>
-                  </div>
+      {/* Certificates Section - Positioned to overlap with the background */}
+      <div className="container mx-auto px-4 relative -mt-[20vh] pb-20 ">
+        <div className="bg-white rounded-xl shadow-xl overflow-hidden max-w-8xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-center py-6 text-gray-800">Certificados</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+            {/* Google Activate Card */}
+            <div className="group rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <div className="bg-gray-800 text-white p-6 flex items-center gap-3">
+                <div className="bg-violet-600 p-2 rounded-full">
+                  <GraduationCap className="w-5 h-5" />
                 </div>
-                <div className="certificadoDivision otroC">
-                  <h2>🎓 Otros</h2>
-                  <ul>
-                    <li>Sololearn - React + Redux </li>
-                    <li>Sololearn - Responsive web design</li>
-                    <li>Sololearn - PHP</li>
-                    <li>Sololearn - Jquery</li>
-                    <li>
-                      Freecodecamp - JavaScript Algorithms and Data Structures
-                    </li>
-                  </ul>
+                <h3 className="text-xl font-semibold">Google Activate</h3>
+              </div>
+              <div className="bg-gray-100 p-6 h-full">
+                <p className="text-gray-700 lg:text-lg">Curso de introducción al desarrollo web: HTML y CSS</p>
+              </div>
+            </div>
+
+            {/* Oracle Alura Card */}
+            <div className="group rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <div className="bg-sky-500 text-white p-6 flex items-center gap-3">
+                <div className="bg-white p-2 rounded-full">
+                  <GraduationCap className="w-5 h-5 text-sky-500" />
                 </div>
+                <h3 className="text-xl font-semibold">Oracle Alura</h3>
+              </div>
+              <div className="bg-sky-50 p-6">
+                <p className="text-gray-700 mb-3">
+                  Rafael Romero ha completado 6 formaciones con una carga de trabajo estimada de 343 horas.
+                </p>
+                <ul className="text-sm space-y-1 text-gray-600 lg:text-lg">
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-sky-500 rounded-full"></span>
+                    Desarrollo Personal G4
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-sky-500 rounded-full"></span>
+                    ONE Principiante en Programación G4
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-sky-500 rounded-full"></span>
+                    ONE Front End G4
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-sky-500 rounded-full"></span>
+                    ONE React G4
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-sky-500 rounded-full"></span>
+                    ONE Emprendimiento G4
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-sky-500 rounded-full"></span>
+                    ONE Business Agility G4
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Otros Card */}
+            <div className="group rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <div className="bg-gray-500 text-white p-6 flex items-center gap-3">
+                <div className="bg-white p-2 rounded-full">
+                  <GraduationCap className="w-5 h-5 text-gray-500" />
+                </div>
+                <h3 className="text-xl font-semibold">Otros</h3>
+              </div>
+              <div className="bg-gray-200 p-6 h-full">
+                <ul className="space-y-2 text-gray-700 lg:text-lg">
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-gray-500 rounded-full"></span>
+                    Sololearn - React + Redux
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-gray-500 rounded-full"></span>
+                    Sololearn - Responsive web design
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-gray-500 rounded-full"></span>
+                    Sololearn - PHP
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-gray-500 rounded-full"></span>
+                    Sololearn - Jquery
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-gray-500 rounded-full"></span>
+                    Freecodecamp - JavaScript Algorithms and Data Structures
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
+

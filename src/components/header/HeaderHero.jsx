@@ -8,26 +8,28 @@ import "./header.css";
 export const HeaderHero = () => {
   return (
     <header
-      className="header  animation min-h-[852px] sm:min-h-screen flex flex-col lg:flex-row relative z-0"
+      className="header  animation min-h-[852px]  flex flex-col lg:flex-row relative z-0 "
       id="headerHero"
     >
-      <div className="w-full min-h-[220px] lg:w-[20%] xl:w-[30%] lg:h-screen bg-[#09c4f6]"></div>
+      <div className="w-full min-h-[220px] lg:w-[20%] xl:w-[30%] lg:h-full bg-[#09c4f6]"></div>
 
       <div
-        className=" w-full h-full lg:w-[80%] xl:w-[70%] lg:h-screen bg-[#2f3640] xl:pr-20  content justify-center lg:justify-end lg:pr-5 2xl:pr-0
-      2xl:justify-center "
+        className=" w-full h-screen lg:w-[80%] xl:w-[70%] lg:h-screen bg-[#2f3640] xl:pr-20  content justify-center lg:justify-end lg:pr-5 2xl:pr-0
+      2xl:justify-center mx-auto  "
       >
-        <div className="presentation h-[450px] lg:h-[800px] text-center mt-[250px] text-sm">
-          <h1 className="letraColor title text-md ">
+        <div className="presentation h-[450px] sm:h-[550px] lg:h-[800px] text-center mt-[250px] text-sm  2xl:pl-28 ">
+        <div className="w-[95%] sm:w-full  ">
+          <h1 className="letraColor title text-[30px] sm:text-5xl lg:text-4xl 2xl:text-5xl ">
             Descubre mi mundo <span className="digital">digital</span>
           </h1>
-          <p className="text-[16px] sm:text-xl text-yellow-400">
+        <p className="text-sm sm:text-xl text-yellow-400 mt-3">
             {" "}
             <span className="text-[#00a8ff] text-[16px] sm:text-xl">
               Rafael Romero Molina
             </span>{" "}
             - Desarrollador Web Front-End
           </p>
+        </div>
           <ul className="flex flex-row justify-center gap-12 mr-4 my-5 sm:mr-[4%]  ">
             <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <a
@@ -63,7 +65,7 @@ export const HeaderHero = () => {
               </a>
             </motion.li>
           </ul>
-          <div className="botonDiv mt-16 ">
+          <div className="botonDiv my-16 ">
             <a href="../../../public/cvPersonal.pdf" download>
               <button className="button">
                 <span className="button_lg">

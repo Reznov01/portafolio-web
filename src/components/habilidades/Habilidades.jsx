@@ -11,7 +11,7 @@ import css3 from "../../assets/img/habilidades/a7.png";
 import html from "../../assets/img/habilidades/a8.png";
 import electron from "../../assets/img/habilidades/a9.png";
 import tailwind from "../../assets/img/habilidades/tailwind.png";
-import { motion } from "framer-motion";
+
 export const Habilidades = () => {
   return (
     <section
