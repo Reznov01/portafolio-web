@@ -8,7 +8,7 @@ import "./header.css";
 export const HeaderHero = () => {
   return (
     <header
-      className="header  animation min-h-[852px]  flex flex-col lg:flex-row relative z-0 "
+      className="header  animation min-h-[852px]  flex flex-col lg:flex-row relative z-0 overflow-hidden "
       id="headerHero"
     >
       <div className="w-full min-h-[220px] lg:w-[20%] xl:w-[30%] lg:h-full bg-[#09c4f6]"></div>

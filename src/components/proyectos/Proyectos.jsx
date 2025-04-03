@@ -5,11 +5,8 @@ import wave from "../../assets/img/portafolio/wave.svg";
 import { Card } from "../proyectos/cards/Card";
 import imgProyecto1 from "../../assets/img/portafolio/searchTool.png";
 import cardModalAppHunter from "../../assets/img/portafolio/appHunter.png";
-
 import imgProyecto2 from "../../assets/img/portafolio/proyectoDotDager.png";
-
 import imgProyecto3 from "../../assets/img/portafolio/proyectoInformatica.png";
-
 import git from "../../assets/img/habilidades/a1.png";
 import node from "../../assets/img/habilidades/a5.png";
 import react from "../../assets/img/habilidades/a3.png";
@@ -21,21 +18,19 @@ import electron from "../../assets/img/habilidades/a9.png";
 import tailwind from "../../assets/img/habilidades/tailwind.png";
 import CardModal from "./modal/CardModal";
 import { MdClose } from "react-icons/md";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 export const Proyectos = () => {
   const [showInfoProyect, setShowInfoProyect] = useState(false);
   const [proyectId, setProyectId] = useState(null);
 
   useEffect(() => {
-    // Agregar o eliminar la clase según el estado del modal
     if (showInfoProyect) {
       document.body.classList.add("no-scroll");
     } else {
       document.body.classList.remove("no-scroll");
     }
 
-    // Limpiar la clase al desmontar el componente
     return () => {
       document.body.classList.remove("no-scroll");
     };
@@ -101,7 +96,7 @@ export const Proyectos = () => {
         );
 
       default:
-        return null; // Si no coincide, no muestra nada.
+        return null;
     }
   };
 
@@ -112,9 +107,9 @@ export const Proyectos = () => {
 
       <div className="container md:pb-20 xl:-mb-40" id="proyectosDiv">
         <div className="titleProyectos">
-          <h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+          <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
             Proyectos
-          </h2>
+          </motion.h2>
         </div>
       </div>
       <div className="proyectosCards proyectos md:-mb-28 ">
@@ -197,57 +192,55 @@ export const Proyectos = () => {
             </div>
           </div>
         </motion.div>
-    <div className="z-10 gap-3 flex flex-col xl:flex-row flex-wrap">
-
-        <motion.div
-          initial={{ x: "-90%", opacity: 0 }}
-          whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
-        >
-          <Card
-            id={1}
-            imagen={imgProyecto1}
-            title="App Hunter"
-            subtitle='Herramienta para windows "busqueda de archivos" '
-            url="https://apphunter-conselab.netlify.app/"
-            handleProyects={handleProyects}
-          />
-        </motion.div>
-        <motion.div
-          initial={{ y: 200, opacity: 0 }}
-          whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
-        >
-          <Card
-            id={2}
-            imagen={imgProyecto2}
-            title="Estilizado tailwind css"
-            colorTextTitle="text-black"
-            colorSubTitle="text-black"
-            subtitle="Componente para suscripción de newsletter"
-            url="https://front-mentor-05.netlify.app/"
-            handleProyects={handleProyects}
-          />
-        </motion.div>
-        <motion.div
-          initial={{ x: "90%", opacity: 0 }}
-          whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
-        >
-          <Card
-            id={3}
-            imagen={imgProyecto3}
-            url="https://informaticaromero.com/"
-            title="Informatica Romero"
-            subtitle="Aplicación web para empresa de mantenimiento informático"
-            habilidad_1={react}
-            habilidad_2={tailwind}
-            handleProyects={handleProyects}
-          />
-        </motion.div>
-    </div>
+        <div className="z-10 gap-3 flex flex-col xl:flex-row flex-wrap">
+          <motion.div
+            initial={{ x: "-90%", opacity: 0 }}
+            whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
+          >
+            <Card
+              id={1}
+              imagen={imgProyecto1}
+              title="App Hunter"
+              subtitle='Herramienta para windows "busqueda de archivos" '
+              url="https://apphunter-conselab.netlify.app/"
+              handleProyects={handleProyects}
+            />
+          </motion.div>
+          <motion.div
+            initial={{ y: 200, opacity: 0 }}
+            whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
+          >
+            <Card
+              id={2}
+              imagen={imgProyecto2}
+              title="Estilizado tailwind css"
+              colorTextTitle="text-black"
+              colorSubTitle="text-black"
+              subtitle="Componente para suscripción de newsletter"
+              url="https://front-mentor-05.netlify.app/"
+              handleProyects={handleProyects}
+            />
+          </motion.div>
+          <motion.div
+            initial={{ x: "90%", opacity: 0 }}
+            whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
+          >
+            <Card
+              id={3}
+              imagen={imgProyecto3}
+              url="https://informaticaromero.com/"
+              title="Informatica Romero"
+              subtitle="Aplicación web para empresa de mantenimiento informático"
+              habilidad_1={react}
+              habilidad_2={tailwind}
+              handleProyects={handleProyects}
+            />
+          </motion.div>
+        </div>
       </div>
 
       <div
         onClick={(e) => {
-          // Verifica que el clic fue en el contenedor principal, no en el contenido interno
           if (e.target === e.currentTarget) {
             setShowInfoProyect(false);
           }
@@ -259,8 +252,6 @@ export const Proyectos = () => {
         }`}
       >
         <div className="bg-[#0f0f10] w-11/12 h-[90vh] max-w-4xl p-6 rounded-lg shadow-lg relative border-x-2 border-x-gray-500 mt-10 overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900 scrollbar-thumb-rounded-full scrollbar-track-rounded-full animate-fade-down animate-duration-300 ">
-          {/* Botón para cerrar el modal */}
-
           <button
             type="button"
             onClick={() => setShowInfoProyect(false)}

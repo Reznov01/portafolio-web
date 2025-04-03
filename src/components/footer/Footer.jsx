@@ -30,7 +30,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-4  p-2 rounded-lg ">
-            <h3 className="text-xl font-bold border-b border-violet-500 pb-2 inline-block">Enlaces Rápidos</h3>
+            <h3 className="text-xl font-bold border-b border-violet-500 pb-2 inline-block">Navegacion</h3>
             <ul className="space-y-2 ">
               <li>
                 <a 
