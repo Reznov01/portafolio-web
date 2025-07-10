@@ -7,6 +7,9 @@ import imgProyecto1 from "../../assets/img/portafolio/searchTool.png";
 import cardModalAppHunter from "../../assets/img/portafolio/appHunter.png";
 import imgProyecto2 from "../../assets/img/portafolio/proyectoDotDager.png";
 import imgProyecto3 from "../../assets/img/portafolio/proyectoInformatica.png";
+import imgProyecto4 from "../../assets/img/portafolio/seguridad.webp";
+import imgProyecto5 from "../../assets/img/portafolio/sospantalla.webp";
+import imgProyecto6 from "../../assets/img/portafolio/proxi.webp";
 import git from "../../assets/img/habilidades/a1.png";
 import node from "../../assets/img/habilidades/a5.png";
 import react from "../../assets/img/habilidades/a3.png";
@@ -94,13 +97,34 @@ export const Proyectos = () => {
             solutions="Esta app web ayudó a aumentar las ventas y el alcance de la marca, haciendo la diferencia entre la competencia al tener presencia en el mercado online y poder atender solicitudes las 24 h."
           />
         );
-
+      case 4:
+        return (
+          <CardModal
+            url={"https://segiridad-privada-demo.vercel.app/"}
+            img={imgProyecto4}
+            tools={["HTML", "CSS", "REACT JS", "TAILWIND CSS"]}
+            info="Aplicación web para empresa del sector Seguridad Privada"
+            challange="capturar el profecionalismo de la empresa y hacer que la experiencia del usuario sea agradable y rapida"
+            solutions="El sitio web esta disponible en el mercado, y este es una demo de lo que se puede hacer con esta app"
+          />
+        );
+      case 5:
+        return (
+          <CardModal
+            url={"https://sospantallamx.com/"}
+            img={imgProyecto5}
+            tools={["HTML", "CSS", "REACT JS", "TAILWIND CSS", "Node js"]}
+            info="Sitio web para empresa de reparacion de celulares"
+            challange="Crear un cotizador de reparaciones de celulares en tiempo real. y que el usuario pueda ver el costo de la reparación de su celular sin necesidad de llenar un formulario"
+            solutions="Con este cotizador solo llegan las repaciones de celulares que el usuario solicite, sin que el equipo de atencion a cliente este tan saturado respondiendo todas las solicitudes"
+          />
+        );
       default:
         return null;
     }
   };
 
-  console.log(proyectId);
+  // console.log(proyectId);
   return (
     <section className="proyectosDiv min-h-[100%]  sm:pb-20 overflow-hidden ">
       <img src={wave} alt="background" className="backgroundWave " />
@@ -192,50 +216,117 @@ export const Proyectos = () => {
             </div>
           </div>
         </motion.div>
-        <div className="z-10 gap-3 flex flex-col xl:flex-row flex-wrap">
-          <motion.div
-            initial={{ x: "-90%", opacity: 0 }}
-            whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
-          >
-            <Card
-              id={1}
-              imagen={imgProyecto1}
-              title="App Hunter"
-              subtitle='Herramienta para windows "busqueda de archivos" '
-              url="https://apphunter-conselab.netlify.app/"
-              handleProyects={handleProyects}
-            />
-          </motion.div>
-          <motion.div
-            initial={{ y: 200, opacity: 0 }}
-            whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
-          >
-            <Card
-              id={2}
-              imagen={imgProyecto2}
-              title="Estilizado tailwind css"
-              colorTextTitle="text-black"
-              colorSubTitle="text-black"
-              subtitle="Componente para suscripción de newsletter"
-              url="https://front-mentor-05.netlify.app/"
-              handleProyects={handleProyects}
-            />
-          </motion.div>
-          <motion.div
-            initial={{ x: "90%", opacity: 0 }}
-            whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
-          >
-            <Card
-              id={3}
-              imagen={imgProyecto3}
-              url="https://informaticaromero.com/"
-              title="Informatica Romero"
-              subtitle="Aplicación web para empresa de mantenimiento informático"
-              habilidad_1={react}
-              habilidad_2={tailwind}
-              handleProyects={handleProyects}
-            />
-          </motion.div>
+        <div className="z-10 gap-3 flex flex-col">
+          <div className="flex flex-col xl:flex-row gap-4">
+            <motion.div
+              initial={{ x: "-90%", opacity: 0 }}
+              whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
+              className="flex-1"
+            >
+              <Card
+                id={1}
+                imagen={imgProyecto1}
+                title="App Hunter"
+                subtitle='Herramienta para windows "busqueda de archivos" '
+                url="https://apphunter-conselab.netlify.app/"
+                handleProyects={handleProyects}
+              />
+            </motion.div>
+            <motion.div
+              initial={{ y: 200, opacity: 0 }}
+              whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
+              className="flex-1"
+            >
+              <Card
+                id={2}
+                imagen={imgProyecto2}
+                title="Dot Dager, Reto 24h"
+                subtitle="mi participacion en el reto de 24h"
+                colorTextTitle="text-black"
+                colorSubTitle="text-black"
+                url="https://front-mentor-05.netlify.app/"
+                handleProyects={handleProyects}
+              />
+            </motion.div>
+            <motion.div
+              initial={{ x: "90%", opacity: 0 }}
+              whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
+              className="flex-1"
+            >
+              <Card
+                id={3}
+                imagen={imgProyecto3}
+                url="https://informaticaromero.com/"
+                title="Informatica Romero"
+                subtitle="Aplicación web para empresa de mantenimiento informático"
+                habilidad_1={react}
+                habilidad_2={tailwind}
+                handleProyects={handleProyects}
+              />
+            </motion.div>
+          </div>
+          <div className="flex flex-col xl:flex-row gap-4 mt-4 justify-center items-center">
+            <motion.div
+              initial={{ x: "-90%", opacity: 0 }}
+              whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
+              className="flex-1"
+            >
+              <Card
+                id={4}
+                imagen={imgProyecto4}
+                url="https://segiridad-privada-demo.vercel.app/"
+                title="Seguridad Privada"
+                subtitle="Sitio web para empresa de seguridad privada"
+                habilidad_1={react}
+                habilidad_2={tailwind}
+                handleProyects={handleProyects}
+              />
+            </motion.div>
+            <motion.div
+              initial={{ x: "90%", opacity: 0 }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+                transition: { duration: 0.5 },
+              }}
+              className="flex-1"
+            >
+              <Card
+                id={5}
+                imagen={imgProyecto5}
+                url="https://sospantallamx.com/"
+                title="Informatica Romero"
+                subtitle="Sitio web para empresa de reparacion de celulares"
+                colorTextTitle="text-black"
+                colorSubTitle="text-black"
+                habilidad_1={react}
+                habilidad_2={tailwind}
+                handleProyects={handleProyects}
+              />
+            </motion.div>
+            <motion.div
+              initial={{ x: "90%", opacity: 0 }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+                transition: { duration: 0.5 },
+              }}
+              className="flex-1"
+            >
+              <Card
+                id={0}
+                imagen={imgProyecto6}
+                url="https://sospantallamx.com/"
+                title="Aplicacion QR para Recidenciales"
+                subtitle="Sitio web para empresa de seguridad"
+                colorTextTitle="text-black"
+                colorSubTitle="text-black"
+                habilidad_1={react}
+                habilidad_2={tailwind}
+                // handleProyects={handleProyects}
+              />
+            </motion.div>
+          </div>
         </div>
       </div>
 
