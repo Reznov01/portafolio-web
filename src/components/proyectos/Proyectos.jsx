@@ -277,6 +277,8 @@ export const Proyectos = () => {
                 url="https://segiridad-privada-demo.vercel.app/"
                 title="Seguridad Privada"
                 subtitle="Sitio web para empresa de seguridad privada"
+                colorTextTitle="text-black"
+                colorSubTitle="text-black"
                 habilidad_1={react}
                 habilidad_2={tailwind}
                 handleProyects={handleProyects}
@@ -295,7 +297,7 @@ export const Proyectos = () => {
                 id={5}
                 imagen={imgProyecto5}
                 url="https://sospantallamx.com/"
-                title="Informatica Romero"
+                title="SOS PANTALLA MX"
                 subtitle="Sitio web para empresa de reparacion de celulares"
                 colorTextTitle="text-black"
                 colorSubTitle="text-black"
