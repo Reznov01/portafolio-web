@@ -1,111 +1,166 @@
-import React from "react";
-import "./habilidades.css";
-import "./responsive.css";
-
-import git from "../../assets/img/habilidades/a1.png";
-import node from "../../assets/img/habilidades/a5.png";
-import react from "../../assets/img/habilidades/a3.png";
-import python from "../../assets/img/habilidades/a4.png";
-import javascript from "../../assets/img/habilidades/a6.png";
-import css3 from "../../assets/img/habilidades/a7.png";
-import html from "../../assets/img/habilidades/a8.png";
-import electron from "../../assets/img/habilidades/a9.png";
-import tailwind from "../../assets/img/habilidades/tailwind.png";
+import {
+  FaJs,
+  FaCss3Alt,
+  FaHtml5,
+  FaGitAlt,
+  FaNodeJs,
+  FaReact,
+  FaPython,
+} from "react-icons/fa";
+import {
+  SiElectron,
+  SiTailwindcss,
+  SiTypescript,
+  SiNextdotjs,
+  SiMongodb,
+} from "react-icons/si";
 
 export const Habilidades = () => {
+  const skills = [
+    {
+      icon: FaReact,
+      name: "REACT JS",
+      level: "Experto",
+      color: "text-cyan-400",
+      bgColor: "bg-cyan-400",
+    },
+    {
+      icon: FaJs,
+      name: "JAVASCRIPT",
+      level: "Avanzado",
+      color: "text-yellow-400",
+      bgColor: "bg-yellow-400",
+    },
+    {
+      icon: SiTypescript,
+      name: "TYPESCRIPT",
+      level: "Avanzado",
+      color: "text-blue-500",
+      bgColor: "bg-blue-500",
+    },
+    {
+      icon: SiNextdotjs,
+      name: "NEXT.JS",
+      level: "Avanzado",
+      color: "text-white",
+      bgColor: "bg-white",
+    },
+    {
+      icon: SiTailwindcss,
+      name: "TAILWIND CSS",
+      level: "Experto",
+      color: "text-teal-400",
+      bgColor: "bg-teal-400",
+    },
+    {
+      icon: FaCss3Alt,
+      name: "CSS3",
+      level: "Avanzado",
+      color: "text-blue-600",
+      bgColor: "bg-blue-600",
+    },
+    {
+      icon: FaHtml5,
+      name: "HTML5",
+      level: "Avanzado",
+      color: "text-orange-500",
+      bgColor: "bg-orange-500",
+    },
+    {
+      icon: FaNodeJs,
+      name: "NODE.JS",
+      level: "Intermedio",
+      color: "text-green-500",
+      bgColor: "bg-green-500",
+    },
+
+    {
+      icon: FaGitAlt,
+      name: "GIT",
+      level: "Avanzado",
+      color: "text-red-500",
+      bgColor: "bg-red-500",
+    },
+    {
+      icon: SiElectron,
+      name: "ELECTRON",
+      level: "Básico",
+      color: "text-indigo-400",
+      bgColor: "bg-indigo-400",
+    },
+    {
+      icon: FaPython,
+      name: "PYTHON",
+      level: "Básico",
+      color: "text-yellow-500",
+      bgColor: "bg-yellow-500",
+    },
+  ];
+
   return (
     <section
-      className="container my-20 h-[50vh]  md:my-36 flex flex-col scroll-mt-28 "
-      id="habilidadesDiv"
+      className="py-20 px-4 bg-gradient-to-br from-gray-50 to-gray-100"
+      id="habilidades"
     >
-      <div className="text-center w-full h-30">
-        <h2 className="text-4xl sm:text-8xl font-medium ">Skills</h2>
+      {/* Header */}
+      <div className="max-w-6xl mx-auto text-center mb-16">
+        <h2 className="text-5xl md:text-7xl font-bold text-gray-800 mb-4">
+          Mis Habilidades
+        </h2>
+        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          Tecnologías y herramientas que domino para crear experiencias web
+          excepcionales
+        </p>
+        <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mt-6 rounded-full"></div>
       </div>
 
-      <div className="bg-slate-800 mx-auto w-[95%] px-2 py-4 md:p-2 mt-10 rounded-md text-white  shadow-[-16px_41px_32px_10px_#00000024]">
-        <div className="card-body habilidades-tecnologias">
-          <div className="flex flex-wrap  sm:w-auto gap-4 justify-center w-full">
-            <div className="flex flex-col items-center gap-2">
-              <img
-                src={javascript}
-                alt="imagen Javascript"
-                className="w-14 h-14 sm:w-28 sm:h-28 xl:w-32 xl:h-32 2xl:w-42 2xl:h-42"
-              />
-              <p className="text-xs sm:text-lg  text-center">JAVASCRIPT</p>
-            </div>
+      {/* Skills Grid */}
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {skills.map((skill, index) => {
+            const IconComponent = skill.icon;
+            return (
+              <div
+                key={skill.name}
+                className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100"
+                style={{
+                  animationDelay: `${index * 0.1}s`,
+                }}
+              >
+                {/* Icon */}
+                <div className="flex justify-center mb-4">
+                  <div className="relative">
+                    <div
+                      className={`absolute inset-0 ${skill.color} opacity-20 rounded-full blur-xl group-hover:opacity-40 transition-opacity duration-300`}
+                    ></div>
+                    <IconComponent
+                      className={`text-5xl md:text-6xl ${skill.color} relative z-10 group-hover:scale-110 transition-transform duration-300`}
+                    />
+                  </div>
+                </div>
 
-            <div className="flex flex-col items-center gap-2">
-              <img
-                src={css3}
-                alt="imagen Css3"
-                className="w-14 h-14 sm:w-28 sm:h-28 xl:w-32 xl:h-32 2xl:w-42 2xl:h-42"
-              />
-              <p className="text-xs sm:text-lg  text-center">CSS3</p>
-            </div>
+                {/* Skill Name */}
+                <h3 className="text-sm md:text-base font-semibold text-gray-800 text-center mb-3">
+                  {skill.name}
+                </h3>
 
-            <div className="flex flex-col items-center gap-2">
-              <img
-                src={html}
-                alt="imagen HTML"
-                className="w-14 h-14 sm:w-28 sm:h-28 xl:w-32 xl:h-32 2xl:w-42 2xl:h-42"
-              />
-              <p className="text-xs sm:text-lg  text-center">HTML</p>
-            </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
 
-            <div className="flex flex-col items-center gap-2">
-              <img
-                src={git}
-                alt="imagen Git"
-                className="w-14 h-14 sm:w-28 sm:h-28 xl:w-32 xl:h-32 2xl:w-42 2xl:h-42"
-              />
-              <p className="text-xs sm:text-lg  text-center">GIT</p>
-            </div>
-
-            <div className="flex flex-col items-center gap-2">
-              <img
-                src={node}
-                alt="imagen Nodejs"
-                className="w-14 h-14 sm:w-28 sm:h-28 xl:w-32 xl:h-32 2xl:w-42 2xl:h-42"
-              />
-              <p className="text-xs sm:text-lg  text-center">NODE JS</p>
-            </div>
-
-            <div className="flex flex-col items-center gap-2">
-              <img
-                src={react}
-                alt="imagen Reactjs"
-                className="w-14 h-14 sm:w-28 sm:h-28 xl:w-32 xl:h-32 2xl:w-42 2xl:h-42"
-              />
-              <p className="text-xs sm:text-lg  text-center">REACT JS</p>
-            </div>
-
-            <div className="flex flex-col items-center gap-2">
-              <img
-                src={python}
-                alt="imagen Python"
-                className="w-14 h-14 sm:w-28 sm:h-28 xl:w-32 xl:h-32 2xl:w-42 2xl:h-42"
-              />
-              <p className="text-xs sm:text-lg  text-center">PYTHON</p>
-            </div>
-
-            <div className="flex flex-col items-center gap-2">
-              <img
-                src={electron}
-                alt="imagen Electronjs"
-                className="w-14 h-14 sm:w-28 sm:h-28 xl:w-32 xl:h-32 2xl:w-42 2xl:h-42"
-              />
-              <p className="text-xs sm:text-lg  text-center">ELECTRON JS</p>
-            </div>
-
-            <div className="flex flex-col items-center gap-2">
-              <img
-                src={tailwind}
-                alt="imagen Tailwind"
-                className="w-14 h-14 sm:w-28 sm:h-28 xl:w-32 xl:h-32 2xl:w-42 2xl:h-42"
-              />
-              <p className="text-xs sm:text-lg  text-center">TAILWIND CSS</p>
-            </div>
-          </div>
+      {/* Bottom Decoration */}
+      <div className="max-w-6xl mx-auto mt-16 text-center">
+        <div className="flex justify-center space-x-2">
+          {[...Array(5)].map((_, i) => (
+            <div
+              key={i}
+              className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full animate-pulse"
+              style={{ animationDelay: `${i * 0.2}s` }}
+            ></div>
+          ))}
         </div>
       </div>
     </section>

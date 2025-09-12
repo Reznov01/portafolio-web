@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import "./proyectos.css";
 import "./responsive.css";
-import wave from "../../assets/img/portafolio/wave.svg";
+
 import { Card } from "../proyectos/cards/Card";
-import imgProyecto1 from "../../assets/img/portafolio/searchTool.png";
+import imgSearch from "../../assets/img/portafolio/searchTool.png";
 import cardModalAppHunter from "../../assets/img/portafolio/appHunter.png";
-import imgProyecto2 from "../../assets/img/portafolio/proyectoDotDager.png";
-import imgProyecto3 from "../../assets/img/portafolio/proyectoInformatica.png";
-import imgProyecto4 from "../../assets/img/portafolio/seguridad.webp";
-import imgProyecto5 from "../../assets/img/portafolio/sospantalla.webp";
-import imgProyecto6 from "../../assets/img/portafolio/proxi.webp";
+import imgDotDager from "../../assets/img/portafolio/proyectoDotDager.png";
+import imgInformatica from "../../assets/img/portafolio/proyectoInformatica.png";
+import imgSeguridad from "../../assets/img/portafolio/seguridad.webp";
+import imgSospantalla from "../../assets/img/portafolio/sospantalla.webp";
+import imgProximamente from "../../assets/img/portafolio/proxi.webp";
 import git from "../../assets/img/habilidades/a1.png";
 import node from "../../assets/img/habilidades/a5.png";
 import react from "../../assets/img/habilidades/a3.png";
@@ -23,339 +23,390 @@ import CardModal from "./modal/CardModal";
 import { MdClose } from "react-icons/md";
 import { motion } from "motion/react";
 
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTwitter,
+  FaReact,
+  FaJs,
+  FaHtml5,
+  FaCss3Alt,
+  FaNodeJs,
+  FaPython,
+  FaExternalLinkAlt,
+  FaTimes,
+} from "react-icons/fa";
+import { SiTailwindcss, SiMysql, SiElectron } from "react-icons/si";
+
 export const Proyectos = () => {
-  const [showInfoProyect, setShowInfoProyect] = useState(false);
-  const [proyectId, setProyectId] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const projects = [
+    {
+      id: 1,
+      title: "App Hunter",
+      subtitle: "Herramienta para Windows - búsqueda de archivos",
+      image: imgSearch,
+      url: "https://apphunter-conselab.netlify.app/",
+      technologies: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Electron JS",
+        "Node JS",
+        "Python",
+      ],
+      description: "Aplicación web y aplicación .exe para plataforma Windows",
+      challenge:
+        "En este proyecto busqué combinar diferentes tecnologías y fue un reto usar Python y Node.js para lograr la comunicación con las APIs de Windows",
+      solution:
+        "Esta app soluciona el buscar todos los archivos PDF, JPG, y Word y los almacena en una sola carpeta con los distintos archivos por separado en carpetas",
+      featured: false,
+    },
+    {
+      id: 2,
+      title: "Dot Dager - Reto 24h",
+      subtitle: "Mi participación en el reto de 24h",
+      image: imgDotDager,
+      url: "https://dot-dager-mocha.vercel.app/",
+      technologies: ["React JS", "Tailwind CSS"],
+      description: "Landing Page para influencer DotDager",
+      challenge:
+        "DotDager lanzó un reto de crear una SPA (Single Page Application) en solo 2 días sin olvidar el diseño responsivo. El principal reto fue el tiempo y el integrar un juego que le gusta dentro de la misma página.",
+      solution:
+        "Con esta página se espera tener más alcance digital, con un estilo divertido y fresco.",
+      featured: false,
+    },
+    {
+      id: 3,
+      title: "Informática Romero",
+      subtitle: "Aplicación web para empresa de mantenimiento informático",
+      image: imgInformatica,
+      url: "https://www.informaticaromero.com",
+      technologies: [
+        "HTML",
+        "CSS",
+        "React JS",
+        "Tailwind CSS",
+        "Node JS",
+        "MySQL",
+      ],
+      description:
+        "Aplicación web para empresa del sector IT especializada en el mantenimiento y reparación de equipos informáticos",
+      challenge:
+        "Hacer un panel de administración donde pueda el administrador crear y modificar artículos para el blog, y además pueda hacer un CRUD de los productos de la tienda",
+      solution:
+        "Esta app web ayudó a aumentar las ventas y el alcance de la marca, haciendo la diferencia entre la competencia al tener presencia en el mercado online y poder atender solicitudes las 24h.",
+      featured: true,
+    },
+    {
+      id: 4,
+      title: "Seguridad Privada",
+      subtitle: "Sitio web para empresa de seguridad privada",
+      image: imgSeguridad,
+      url: "https://seguridad-privada-demo.vercel.app/",
+      technologies: ["HTML", "CSS", "React JS", "Tailwind CSS"],
+      description: "Aplicación web para empresa del sector Seguridad Privada",
+      challenge:
+        "Capturar el profesionalismo de la empresa y hacer que la experiencia del usuario sea agradable y rápida",
+      solution:
+        "El sitio web está disponible en el mercado, y este es una demo de lo que se puede hacer con esta app",
+      featured: false,
+    },
+    {
+      id: 5,
+      title: "SOS PANTALLA MX",
+      subtitle: "Sitio web para empresa de reparación de celulares",
+      image: imgSospantalla,
+      url: "https://sospantallamx.com/",
+      technologies: ["HTML", "CSS", "React JS", "Tailwind CSS", "Node JS"],
+      description: "Sitio web para empresa de reparación de celulares",
+      challenge:
+        "Crear un cotizador de reparaciones de celulares en tiempo real y que el usuario pueda ver el costo de la reparación de su celular sin necesidad de llenar un formulario",
+      solution:
+        "Con este cotizador solo llegan las reparaciones de celulares que el usuario solicite, sin que el equipo de atención a cliente esté tan saturado respondiendo todas las solicitudes",
+      featured: false,
+    },
+  ];
 
-  useEffect(() => {
-    if (showInfoProyect) {
-      document.body.classList.add("no-scroll");
-    } else {
-      document.body.classList.remove("no-scroll");
-    }
-
-    return () => {
-      document.body.classList.remove("no-scroll");
+  const getTechIcon = (tech) => {
+    const iconMap = {
+      "React JS": <FaReact className="text-blue-400" />,
+      JavaScript: <FaJs className="text-yellow-400" />,
+      HTML: <FaHtml5 className="text-orange-500" />,
+      CSS: <FaCss3Alt className="text-blue-500" />,
+      "Node JS": <FaNodeJs className="text-green-500" />,
+      Python: <FaPython className="text-blue-600" />,
+      "Tailwind CSS": <SiTailwindcss className="text-cyan-400" />,
+      MySQL: <SiMysql className="text-orange-600" />,
+      "Electron JS": <SiElectron className="text-teal-400" />,
     };
-  }, [showInfoProyect]);
-
-  const handleProyects = (e) => {
-    setProyectId(e);
-    setShowInfoProyect(!showInfoProyect);
-    handleScroll();
+    return iconMap[tech] || <div className="w-6 h-6 bg-gray-400 rounded"></div>;
   };
 
-  const renderContent = () => {
-    switch (proyectId) {
-      case 1:
-        return (
-          <CardModal
-            url={"https://apphunter-conselab.netlify.app/"}
-            img={cardModalAppHunter}
-            tools={[
-              "HTML",
-              "CSS",
-              "JAVASCRIPT",
-              "ELECTRON JS",
-              "NODE JS",
-              "PYTHON",
-            ]}
-            info="Aplicación web Y aplicación .exe para plataforma Windows"
-            challange="En este proyecto busqué el combinar diferentes tecnologías y fue un reto el usar Python y Node js para lograr la comunicación con las apis de Windows"
-            solutions="Esta app soluciona el buscar todos los archivos PDF, JPG, y Word y los almacena en una sola carpeta con los distintos archivos por separado en carpetas"
-          />
-        );
-
-      case 2:
-        return (
-          <CardModal
-            url={"https://dot-dager-mocha.vercel.app/"}
-            img={imgProyecto2}
-            tools={["REACT JS", "TAILWIND CSS"]}
-            info="Landing Page para influencer DotDager"
-            challange="DotDager lanzó un reto de crear una SPA (Single Page Aplication) en solo 2 días sin olvidar el diseño responsivo. El principal reto fue el tiempo
-             Y el integrar un juego que le gusta dentro de la misma página."
-            solutions="Con esta página se espera tener más alcance digital, con un estilo divertido y fresco."
-          />
-        );
-
-      case 3:
-        return (
-          <CardModal
-            url={"https://www.informaticaromero.com"}
-            img={imgProyecto3}
-            tools={[
-              "HTML",
-              "CSS",
-              "REACT JS",
-              "TAILWIND CSS",
-              "NODE JS",
-              "MYSQL",
-            ]}
-            info="Aplicación web para empresa del sector IT especializada en el mantenimiento y reparación de equipos informáticos"
-            challange="El principal reto de este proyecto fue: Hacer un panel de administración donde pueda el administrador crear y modificar artículos para el blog, y además pueda hacer un CRUD de los productos de la tienda"
-            solutions="Esta app web ayudó a aumentar las ventas y el alcance de la marca, haciendo la diferencia entre la competencia al tener presencia en el mercado online y poder atender solicitudes las 24 h."
-          />
-        );
-      case 4:
-        return (
-          <CardModal
-            url={"https://segiridad-privada-demo.vercel.app/"}
-            img={imgProyecto4}
-            tools={["HTML", "CSS", "REACT JS", "TAILWIND CSS"]}
-            info="Aplicación web para empresa del sector Seguridad Privada"
-            challange="capturar el profecionalismo de la empresa y hacer que la experiencia del usuario sea agradable y rapida"
-            solutions="El sitio web esta disponible en el mercado, y este es una demo de lo que se puede hacer con esta app"
-          />
-        );
-      case 5:
-        return (
-          <CardModal
-            url={"https://sospantallamx.com/"}
-            img={imgProyecto5}
-            tools={["HTML", "CSS", "REACT JS", "TAILWIND CSS", "Node js"]}
-            info="Sitio web para empresa de reparacion de celulares"
-            challange="Crear un cotizador de reparaciones de celulares en tiempo real. y que el usuario pueda ver el costo de la reparación de su celular sin necesidad de llenar un formulario"
-            solutions="Con este cotizador solo llegan las repaciones de celulares que el usuario solicite, sin que el equipo de atencion a cliente este tan saturado respondiendo todas las solicitudes"
-          />
-        );
-      default:
-        return null;
-    }
+  const openModal = (project) => {
+    setSelectedProject(project);
+    setShowModal(true);
+    document.body.style.overflow = "hidden";
   };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setSelectedProject(null);
+    document.body.style.overflow = "unset";
+  };
+
+  const featuredProject = projects.find((p) => p.featured);
+  const regularProjects = projects.filter((p) => !p.featured);
 
   // console.log(proyectId);
   return (
-    <section className="proyectosDiv min-h-[100%]  sm:pb-20 overflow-hidden ">
-      <img src={wave} alt="background" className="backgroundWave " />
-
-      <div className="container md:pb-20 xl:-mb-40" id="proyectosDiv">
-        <div className="titleProyectos">
-          <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-            Proyectos
-          </motion.h2>
-        </div>
-      </div>
-      <div className="proyectosCards proyectos md:-mb-28 ">
-        <motion.div
-          className="w-[96%] z-1 rounded-2xl xl:h-[500px] bg-slate-800  flex  flex-wrap sm:mt-20 lg:mt-32"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1, transition: { duration: 0.5 } }}
-        >
-          <div className="xl:w-2/5 flex items-center justify-center h-[300px] sm:mb-24 md:mb-36 lg:mb-[250px] xl:h-full ">
-            <img
-              src={imgProyecto3}
-              alt="imagen de proyecto "
-              className="object-cover w-full xl:w-[85%] xl:h-[90%] xl:object-fill   2xl:object-cover 2xl:w-[90%] rounded-md 2xl:h-[90%]"
-            />
+    <div className="min-h-screen bg-gray-50">
+      <section id="proyectos" className="bg-white py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          {/* Section Title */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+              Mis Proyectos
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Una selección de mis trabajos más destacados en desarrollo
+              frontend
+            </p>
           </div>
-          <div className="w-[360px] sm:w-full xl:w-3/5 h-full text-white xl:pt-5">
-            <div>
-              <h2 className="text-center">Informatica Romero</h2>
-            </div>
-            <div className="w-[90%] text-sm  mt-10 mx-auto sm:text-lg 2xl:w-[90ch] xl:text-lg">
-              <p>
-                Aplicación web para empresa del sector IT especializada en el
-                mantenimiento y reparación de equipos informáticos
-              </p>
-              <p>
-                <span className="text-blue-300 font-bold">
-                  El principal reto de este proyecto fue
-                </span>
-                : Hacer un panel de administración donde pueda el administrador
-                crear y modificar artículos para el blog, y además pueda hacer
-                un CRUD de los productos de la tienda
-              </p>
-              <p>
-                El SEO de la página es sumamente importante, apliqué prácticas
-                De semántica y accesibilidad a sí como un diseño totalmente
-                Responsivo para todos los dispositivos de usuarios
-              </p>
-            </div>
-            <div className="px-3 sm:ml-3 xl:ml-5 2xl:ml-24 2xl:mt-10">
-              <h3>tecnologias</h3>
-            </div>
-            <div className="my-4 xl:my-0  px-3  gap-4  h-10 flex sm:ml-3  xl:ml-5 xl:mt-5 2xl:ml-24">
-              <img
-                src={html}
-                alt="imagen de html"
-                className="w-[15px] h-[30px] sm:w-[25px] xl:w-[45px] xl:h-[40px]"
-              />
-              <img
-                src={css3}
-                alt="imagen de css3"
-                className="w-[15px] h-[30px] sm:w-[25px] xl:w-[45px] xl:h-[40px]"
-              />
-              <img
-                src={tailwind}
-                alt="imagen de tailwindcss"
-                className="w-[15px] h-[30px] sm:w-[25px] xl:w-[45px] xl:h-[40px]"
-              />
-              <img
-                src={react}
-                alt="imagen de react js"
-                className="w-[15px] h-[30px] sm:w-[25px] xl:w-[45px] xl:h-[40px]"
-              />
-              <img
-                src={node}
-                alt="imagen de node js"
-                className="w-[15px] h-[30px] sm:w-[25px] xl:w-[45px] xl:h-[40px]"
-              />
-              <a
-                href="https://informaticaromero.com/"
-                className="no-underline text-inherit"
-                target="_blanck"
-              >
-                <button className="btnFirstCard  xl:ml-[150px] 2xl:ml-[380px] text-[12px] w-[130px] sm:w-[150px] sm:text-[16px] sm:ml-[150px] sm:p-[16px] p-3 h-5">
-                  Ver sitio web
-                  <div className="arrow-wrapper hidden sm:block">
-                    <div className="arrow hidden sm:block"></div>
+
+          {featuredProject && (
+            <div className="mb-16">
+              <div className="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="grid lg:grid-cols-2 gap-0">
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={featuredProject.image || "/placeholder.svg"}
+                      alt={featuredProject.title}
+                      className="w-full h-64 lg:h-full object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-gray-900/20"></div>
                   </div>
-                </button>
-              </a>
+
+                  <div className="p-8 lg:p-12 text-white">
+                    <div className="mb-6">
+                      <h3 className="text-2xl lg:text-3xl font-bold mb-2">
+                        {featuredProject.title}
+                      </h3>
+                      <p className="text-gray-300 text-lg">
+                        {featuredProject.subtitle}
+                      </p>
+                    </div>
+
+                    <div className="space-y-4 mb-8">
+                      <p className="text-gray-200 leading-relaxed">
+                        {featuredProject.description}
+                      </p>
+                      <p className="text-gray-200 leading-relaxed">
+                        <span className="text-blue-400 font-semibold">
+                          El principal reto:
+                        </span>{" "}
+                        {featuredProject.challenge}
+                      </p>
+                    </div>
+
+                    <div className="mb-8">
+                      <h4 className="text-lg font-semibold mb-4 text-blue-400">
+                        Tecnologías
+                      </h4>
+                      <div className="flex flex-wrap gap-3">
+                        {featuredProject.technologies.map((tech, index) => (
+                          <div
+                            key={index}
+                            className="flex items-center gap-2 bg-gray-800 px-3 py-2 rounded-lg"
+                          >
+                            {getTechIcon(tech)}
+                            <span className="text-sm">{tech}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="flex gap-4">
+                      <a
+                        href={featuredProject.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors flex items-center gap-2"
+                      >
+                        Ver Sitio Web
+                        <FaExternalLinkAlt className="text-sm" />
+                      </a>
+                      <button
+                        onClick={() => openModal(featuredProject)}
+                        className="border border-gray-600 hover:border-gray-400 text-white px-6 py-3 rounded-lg transition-colors"
+                      >
+                        Ver Detalles
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {regularProjects.map((project, index) => (
+              <div
+                key={project.id}
+                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group"
+                style={{
+                  animationDelay: `${index * 0.1}s`,
+                }}
+              >
+                <div className="relative overflow-hidden">
+                  <img
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.title}
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    {project.subtitle}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                      <div
+                        key={techIndex}
+                        className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded text-xs"
+                      >
+                        {getTechIcon(tech)}
+                        <span>{tech}</span>
+                      </div>
+                    ))}
+                    {project.technologies.length > 3 && (
+                      <span className="text-xs text-gray-500 px-2 py-1">
+                        +{project.technologies.length - 3} más
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="flex gap-2">
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2"
+                    >
+                      Ver Sitio
+                      <FaExternalLinkAlt className="text-xs" />
+                    </a>
+                    <button
+                      onClick={() => openModal(project)}
+                      className="flex-1 border border-gray-300 hover:border-gray-400 text-gray-700 py-2 px-4 rounded-lg transition-colors text-sm"
+                    >
+                      Detalles
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {showModal && selectedProject && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
+          <div className="bg-gray-900 w-full max-w-4xl max-h-[90vh] rounded-xl shadow-2xl overflow-hidden">
+            <div className="relative">
+              <button
+                onClick={closeModal}
+                className="absolute top-4 right-4 z-10 bg-red-600 hover:bg-red-700 text-white p-2 rounded-full transition-colors"
+              >
+                <FaTimes className="text-lg" />
+              </button>
+
+              <div className="overflow-y-auto max-h-[90vh] p-6 lg:p-8 text-white">
+                <div className="mb-6">
+                  <img
+                    src={selectedProject.image || "/placeholder.svg"}
+                    alt={selectedProject.title}
+                    className="w-full h-64 lg:h-80 object-cover rounded-lg mb-6"
+                  />
+
+                  <h2 className="text-3xl font-bold mb-2">
+                    {selectedProject.title}
+                  </h2>
+                  <p className="text-gray-300 text-lg mb-6">
+                    {selectedProject.subtitle}
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-xl font-semibold mb-3 text-blue-400">
+                      Descripción
+                    </h3>
+                    <p className="text-gray-200 leading-relaxed">
+                      {selectedProject.description}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold mb-3 text-blue-400">
+                      Desafío
+                    </h3>
+                    <p className="text-gray-200 leading-relaxed">
+                      {selectedProject.challenge}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold mb-3 text-blue-400">
+                      Solución
+                    </h3>
+                    <p className="text-gray-200 leading-relaxed">
+                      {selectedProject.solution}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold mb-4 text-blue-400">
+                      Tecnologías Utilizadas
+                    </h3>
+                    <div className="flex flex-wrap gap-3">
+                      {selectedProject.technologies.map((tech, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center gap-2 bg-gray-800 px-4 py-2 rounded-lg"
+                        >
+                          {getTechIcon(tech)}
+                          <span>{tech}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-4">
+                    <a
+                      href={selectedProject.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors"
+                    >
+                      Visitar Sitio Web
+                      <FaExternalLinkAlt />
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </motion.div>
-        <div className="z-10 gap-3 flex flex-col">
-          <div className="flex flex-col xl:flex-row gap-4">
-            <motion.div
-              initial={{ x: "-90%", opacity: 0 }}
-              whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
-              className="flex-1"
-            >
-              <Card
-                id={1}
-                imagen={imgProyecto1}
-                title="App Hunter"
-                subtitle='Herramienta para windows "busqueda de archivos" '
-                url="https://apphunter-conselab.netlify.app/"
-                handleProyects={handleProyects}
-              />
-            </motion.div>
-            <motion.div
-              initial={{ y: 200, opacity: 0 }}
-              whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
-              className="flex-1"
-            >
-              <Card
-                id={2}
-                imagen={imgProyecto2}
-                title="Dot Dager, Reto 24h"
-                subtitle="mi participacion en el reto de 24h"
-                colorTextTitle="text-black"
-                colorSubTitle="text-black"
-                url="https://front-mentor-05.netlify.app/"
-                handleProyects={handleProyects}
-              />
-            </motion.div>
-            <motion.div
-              initial={{ x: "90%", opacity: 0 }}
-              whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
-              className="flex-1"
-            >
-              <Card
-                id={3}
-                imagen={imgProyecto3}
-                url="https://informaticaromero.com/"
-                title="Informatica Romero"
-                subtitle="Aplicación web para empresa de mantenimiento informático"
-                habilidad_1={react}
-                habilidad_2={tailwind}
-                handleProyects={handleProyects}
-              />
-            </motion.div>
-          </div>
-          <div className="flex flex-col xl:flex-row gap-4 mt-4 justify-center items-center">
-            <motion.div
-              initial={{ x: "-90%", opacity: 0 }}
-              whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
-              className="flex-1"
-            >
-              <Card
-                id={4}
-                imagen={imgProyecto4}
-                url="https://segiridad-privada-demo.vercel.app/"
-                title="Seguridad Privada"
-                subtitle="Sitio web para empresa de seguridad privada"
-                colorTextTitle="text-black"
-                colorSubTitle="text-black"
-                habilidad_1={react}
-                habilidad_2={tailwind}
-                handleProyects={handleProyects}
-              />
-            </motion.div>
-            <motion.div
-              initial={{ x: "90%", opacity: 0 }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-                transition: { duration: 0.5 },
-              }}
-              className="flex-1"
-            >
-              <Card
-                id={5}
-                imagen={imgProyecto5}
-                url="https://sospantallamx.com/"
-                title="SOS PANTALLA MX"
-                subtitle="Sitio web para empresa de reparacion de celulares"
-                colorTextTitle="text-black"
-                colorSubTitle="text-black"
-                habilidad_1={react}
-                habilidad_2={tailwind}
-                handleProyects={handleProyects}
-              />
-            </motion.div>
-            <motion.div
-              initial={{ x: "90%", opacity: 0 }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-                transition: { duration: 0.5 },
-              }}
-              className="flex-1"
-            >
-              <Card
-                id={0}
-                imagen={imgProyecto6}
-                url="https://sospantallamx.com/"
-                title="Aplicacion QR para Recidenciales"
-                subtitle="Sitio web para empresa de seguridad"
-                colorTextTitle="text-black"
-                colorSubTitle="text-black"
-                habilidad_1={react}
-                habilidad_2={tailwind}
-                // handleProyects={handleProyects}
-              />
-            </motion.div>
-          </div>
         </div>
-      </div>
-
-      <div
-        onClick={(e) => {
-          if (e.target === e.currentTarget) {
-            setShowInfoProyect(false);
-          }
-        }}
-        className={`${
-          showInfoProyect
-            ? "fixed  inset-0 bg-[#000000e7]  flex items-center justify-center z-50"
-            : "hidden"
-        }`}
-      >
-        <div className="bg-[#0f0f10] w-11/12 h-[90vh] max-w-4xl p-6 rounded-lg shadow-lg relative border-x-2 border-x-gray-500 mt-10 overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900 scrollbar-thumb-rounded-full scrollbar-track-rounded-full animate-fade-down animate-duration-300 ">
-          <button
-            type="button"
-            onClick={() => setShowInfoProyect(false)}
-            className="sticky top-1 left-[98%]  "
-          >
-            <MdClose className="text-red-500 font-bold text-2xl hover:scale-125 transition-all " />
-          </button>
-
-          {renderContent()}
-        </div>
-      </div>
-    </section>
+      )}
+    </div>
   );
 };

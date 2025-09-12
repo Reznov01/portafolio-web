@@ -1,20 +1,29 @@
-import { GraduationCap } from "lucide-react"
+import { GraduationCap } from "lucide-react";
 
 export default function PortfolioSection() {
   return (
-    <div className="relative mt-32 sm:mt-[350px]  lg:mt-32 sm:scroll-mt-12" id="certificadosDiv"> 
+    <div
+      className="relative mt-32 sm:mt-[350px]  lg:mt-32 sm:scroll-mt-12"
+      id="certificadosDiv"
+    >
       {/* Background Section - 50vh height */}
       <div className="w-full h-[60vh] sm:h-[50vh] bg-gradient-to-b from-violet-700 to-violet-700 via-violet-600">
         {/* Header Section */}
         <div className="container mx-auto px-4 py-12 text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Hola <span className="inline-block animate-wave">👋</span>, soy Rafael Romero
-            <span className="block mt-2 text-xl md:text-2xl font-medium">Un gusto saludarte</span>
+            Hola <span className="inline-block animate-wave">👋</span>, soy
+            Rafael Romero
+            <span className="block mt-2 text-xl md:text-2xl font-medium">
+              Un gusto saludarte
+            </span>
           </h1>
 
           <p className="max-w-3xl mx-auto text-white/90 text-base md:text-lg mt-6 leading-relaxed">
-            Un desarrollador web Front-End autodidacta. Mi enfoque se centra en transformar desafíos en oportunidades,
-            reflejado en mi portafolio la fusión de creatividad y esfuerzo que define mi viaje en el desarrollo web.
+            Desarrollador web Front-End con experiencia en la creación de
+            aplicaciones modernas y funcionales. Me apasiona transformar ideas
+            en soluciones digitales, combinando diseño, rendimiento y
+            usabilidad. Mi portafolio refleja el compromiso, la creatividad y la
+            dedicación que pongo en cada proyecto.
           </p>
         </div>
       </div>
@@ -22,7 +31,9 @@ export default function PortfolioSection() {
       {/* Certificates Section - Positioned to overlap with the background */}
       <div className="container mx-auto px-4 relative -mt-[10vh] sm:-mt-[16vh] pb-20 ">
         <div className="bg-white rounded-xl shadow-xl overflow-hidden max-w-8xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-center py-6 text-gray-800">Certificados</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-center py-6 text-gray-800">
+            Certificados
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
             {/* Google Activate Card */}
@@ -34,7 +45,9 @@ export default function PortfolioSection() {
                 <h3 className="text-xl font-semibold">Google Activate</h3>
               </div>
               <div className="bg-gray-100 p-6 h-full">
-                <p className="text-gray-700 lg:text-lg">Curso de introducción al desarrollo web: HTML y CSS</p>
+                <p className="text-gray-700 lg:text-lg">
+                  Curso de introducción al desarrollo web: HTML y CSS
+                </p>
               </div>
             </div>
 
@@ -48,7 +61,8 @@ export default function PortfolioSection() {
               </div>
               <div className="bg-sky-50 p-6">
                 <p className="text-gray-700 mb-3">
-                  Rafael Romero ha completado 6 formaciones con una carga de trabajo estimada de 343 horas.
+                  Rafael Romero ha completado 6 formaciones con una carga de
+                  trabajo estimada de 343 horas.
                 </p>
                 <ul className="text-sm space-y-1 text-gray-600 lg:text-lg">
                   <li className="flex items-center gap-2">
@@ -116,6 +130,5 @@ export default function PortfolioSection() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-
