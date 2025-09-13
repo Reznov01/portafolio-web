@@ -105,7 +105,7 @@ export const Proyectos = () => {
       title: "Seguridad Privada",
       subtitle: "Sitio web para empresa de seguridad privada",
       image: imgSeguridad,
-      url: "https://seguridad-privada-demo.vercel.app/",
+      url: "https://segiridad-privada-demo.vercel.app/",
       technologies: ["HTML", "CSS", "React JS", "Tailwind CSS"],
       description: "Aplicación web para empresa del sector Seguridad Privada",
       challenge:

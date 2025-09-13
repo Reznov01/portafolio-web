@@ -21,11 +21,11 @@ import imageAvatar from "../../assets/img/habitacion.jpeg";
 
 export const HeaderHero = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50" id="home">
       {/* Hero Section */}
       <div className="relative px-6 lg:px-12 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 md:gap-12 items-center gap-20">
             {/* Left Content */}
             <div className="space-y-6">
               <p className="text-blue-600 text-lg font-medium">Hola 👋</p>
@@ -33,7 +33,7 @@ export const HeaderHero = () => {
                 Descubre mi mundo digital
               </h1>
               <h2 className="text-xl lg:text-2xl text-blue-600 font-medium">
-                {" { name: Rafael Romero Molina }"}
+                {' { name: "Rafael Romero Molina" }'}
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed max-w-md">
                 Soy un desarrollador frontend especializado en React.js,
@@ -58,17 +58,17 @@ export const HeaderHero = () => {
                   </a>
                   */}
                   <a
-                    href="#"
-                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                    href="https://www.instagram.com/rafael_conse/"
+                    className="text-gray-600 hover:text-orange-600 transition-colors "
                   >
-                    <FaInstagram size={20} />
+                    <FaInstagram size={28} />
                   </a>
                   <a
                     href="https://www.linkedin.com/in/rafael-romero-molina/"
                     target="_blank"
                     className="text-gray-600 hover:text-blue-600 transition-colors"
                   >
-                    <FaLinkedinIn size={20} />
+                    <FaLinkedinIn size={28} />
                   </a>
                   {/* <a
                     href="#"

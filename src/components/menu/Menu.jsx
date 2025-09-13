@@ -1,14 +1,66 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FolderKanban, Code, User } from "lucide-react";
 import "./menu.css";
 import { motion } from "framer-motion";
+import { MdOutlineFileDownload } from "react-icons/md";
+import { FaDownload } from "react-icons/fa";
+import {
+  MdClose,
+  MdHome,
+  MdPerson,
+  MdWork,
+  MdBuild,
+  MdMiscellaneousServices,
+  MdRateReview,
+  MdContactMail,
+} from "react-icons/md";
 
 export const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const navLinks = [
+    { text: "Inicio", icon: <MdHome size={24} />, targetId: "home" },
+    {
+      text: "Acerca de",
+      icon: <MdPerson size={24} />,
+      targetId: "certificadosDiv",
+    },
+    {
+      text: "Portafolio",
+      icon: <MdWork size={24} />,
+      targetId: "proyectos",
+    },
+    {
+      text: "Habilidades",
+      icon: <MdBuild size={24} />,
+      targetId: "habilidades",
+    },
+  ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const navModal = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleScrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+      });
+      setIsOpen(false); // Close the mobile menu after clicking a link
+    }
   };
 
   // Efecto para bloquear el scroll cuando el menú está abierto
@@ -34,160 +86,188 @@ export const Menu = () => {
         onClick={navModal}
       />
       {/* Menú lateral */}
-      <motion.div
-        initial={{ x: "100%" }}
-        animate={{ x: isOpen ? 0 : "100%" }}
-        transition={{ type: "spring", stiffness: 300, damping: 30, delay: 0.1 }} // retraso para el menú lateral
-        className="fixed top-0 right-0 h-full w-56 bg-[#ffffff] overflow-hidden"
+      <div
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-opacity duration-300 ${
+          isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={navModal}
+      />
+
+      {/* Menu Panel */}
+      <div
+        className={`fixed top-0 right-0 z-50 h-full w-80 bg-gradient-to-br from-white via-gray-50 to-blue-50 shadow-2xl transform transition-transform duration-300 ease-out ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
       >
-        <div className="h-full flex flex-col mt-16">
-          <ul className="text-xl text-black -ml-8">
-            {/* Animación para el primer enlace */}
-            <motion.li
-              className="my-5"
-              initial={{ opacity: 0, translateY: 10 }}
-              animate={{ opacity: 1, translateY: 0 }}
-              transition={{ duration: 0.3 }}
+        {/* Header with close button */}
+        <div className="relative p-6 border-b border-gray-200/50">
+          <div className="flex items-center justify-between">
+            <div>
+              <h3 className="text-xl font-bold text-gray-800">Navegación</h3>
+              <p className="text-sm text-gray-500">Explora mi portafolio</p>
+            </div>
+            <button
+              onClick={navModal}
+              className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200 group"
             >
-              <button
-                onClick={() => {
-                  const element = document.getElementById("proyectosDiv");
-                  element?.scrollIntoView({
-                    behavior: "smooth",
-                  });
-                  navModal();
-                }}
-                className="flex items-center gap-2 text-black font-bold text-xl w-full px-4 py-2 transition-all duration-300 hover:bg-black/10 active:bg-black/20 rounded-lg "
-              >
-                <FolderKanban size={28} />
-                Proyectos
-              </button>
-            </motion.li>
+              <MdClose
+                size={24}
+                className="text-gray-600 group-hover:text-gray-800 transition-colors duration-200"
+              />
+            </button>
+          </div>
+        </div>
 
-            {/* Animación para el segundo enlace */}
-            <motion.li
-              className="my-5"
-              initial={{ opacity: 0, translateY: 10 }}
-              animate={{ opacity: 1, translateY: 0 }}
-              transition={{ duration: 0.3, delay: 0.1 }} // pequeño retraso para el segundo enlace
-            >
-              <button
-                onClick={() => {
-                  const element = document.getElementById("habilidadesDiv");
-                  element?.scrollIntoView({
-                    behavior: "smooth",
-                  });
-                  navModal();
+        {/* Navigation Links */}
+        <div className="flex-1 p-6">
+          <ul className="space-y-2">
+            {navLinks.map((link, i) => (
+              <li
+                key={i}
+                className={`transform transition-all duration-300 ${
+                  isOpen
+                    ? "translate-x-0 opacity-100"
+                    : "translate-x-8 opacity-0"
+                }`}
+                style={{
+                  transitionDelay: isOpen ? `${0.1 + i * 0.05}s` : "0s",
                 }}
-                className="flex items-center gap-2 text-black font-bold text-xl w-full px-4 py-2 transition-all duration-300 hover:bg-black/10 active:bg-black/20 rounded-lg"
               >
-                <Code size={28} />
-                Habilidades
-              </button>
-            </motion.li>
-
-            {/* Animación para el tercer enlace */}
-            <motion.li
-              className="my-5"
-              initial={{ opacity: 0, translateY: 10 }}
-              animate={{ opacity: 1, translateY: 0 }}
-              transition={{ duration: 0.3, delay: 0.2 }} // pequeño retraso para el tercer enlace
-            >
-              <button
-                onClick={() => {
-                  const element = document.getElementById("certificadosDiv");
-                  element?.scrollIntoView({
-                    behavior: "smooth",
-                  });
-                  navModal();
-                }}
-                className="flex items-center gap-2 text-black font-bold text-xl w-full px-4 py-2 transition-all duration-300 hover:bg-black/10 active:bg-black/20 rounded-lg"
-              >
-                <User size={28} />
-                Sobre Mi
-              </button>
-            </motion.li>
+                <button
+                  onClick={() => handleScrollToSection(link.targetId)}
+                  className="flex w-full items-center gap-4 rounded-xl p-4 text-left font-medium text-gray-700 transition-all duration-200 hover:bg-white hover:shadow-md hover:scale-105 active:scale-95 group"
+                >
+                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-100 text-blue-600 group-hover:bg-blue-500 group-hover:text-white transition-all duration-200">
+                    {link.icon}
+                  </div>
+                  <span className="group-hover:text-gray-900 transition-colors duration-200">
+                    {link.text}
+                  </span>
+                  <div className="ml-auto w-2 h-2 rounded-full bg-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
-      </motion.div>
 
-      <div className="container-fluid    bg-[#2f3640] ">
+        {/* Footer with CV Download */}
+        <div className="p-6 border-t border-gray-200/50">
+          <a
+            href="/ruta/a/tu/cv.pdf"
+            download="NombreApellido_CV.pdf"
+            className={`flex w-full items-center gap-4 rounded-xl p-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold shadow-lg hover:shadow-xl hover:from-blue-600 hover:to-blue-700 transition-all duration-200 hover:scale-105 active:scale-95 transform ${
+              isOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+            }`}
+            style={{
+              transitionDelay: isOpen
+                ? `${0.1 + navLinks.length * 0.05}s`
+                : "0s",
+            }}
+          >
+            <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-white/20">
+              <FaDownload size={20} />
+            </div>
+            <span>Descargar CV</span>
+            <div className="ml-auto">
+              <div className="w-2 h-2 rounded-full bg-white/60" />
+            </div>
+          </a>
+
+          {/* Decorative element */}
+          <div className="mt-4 flex justify-center">
+            <div className="flex space-x-1">
+              <div className="w-2 h-2 rounded-full bg-blue-300" />
+              <div className="w-2 h-2 rounded-full bg-blue-400" />
+              <div className="w-2 h-2 rounded-full bg-blue-500" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className={`transition-colors duration-500 
+          ${isScrolled ? " bg-[#242525] " : "bg-[#ffffff]"}
+        `}
+      >
         <div className="padreNav ">
-          <div className="text-teal-50 flex  p-1 sm:p-2 justify-between  lg:mx-12 2xl:mx-28">
+          <div
+            className={`flex justify-around  ${
+              isScrolled ? "text-teal-50" : "text-black"
+            } flex  p-1 sm:p-2 justify-between  lg:mx-12 2xl:mx-28`}
+          >
             <button
               className="hidden lg:block text-xl uppercase font-medium k"
               onClick={() => {
-                const element = document.getElementById("headerHero");
+                const element = document.getElementById("home");
                 element?.scrollIntoView({
                   behavior: "smooth",
                 });
               }}
             >
-              Rafael Romero
+              Rafael Romeroa
             </button>
             <div className="w-full flex p-2 z-10 items-center justify-between lg:hidden">
               <button
                 className="uppercase font-medium"
-                onClick={() => {
-                  const element = document.getElementById("headerHero");
-                  element?.scrollIntoView({
-                    behavior: "smooth",
-                  });
-                }}
+                onClick={() => handleScrollToSection("home")}
               >
                 Rafael Romero
               </button>
 
               <GiHamburgerMenu
-                className={`burgerIconNav text-xl ${
-                  isOpen ? "text-black" : "text-white"
-                }`}
+                className={`burgerIconNav text-xl cursor-pointer ${
+                  isScrolled ? "text-white" : "text-black"
+                } }
+                    
+                  `}
                 onClick={navModal}
+                fill={isScrolled ? "white" : "black"}
               />
             </div>
             <div className="enlaces hidden lg:block">
-              <ul className="nav text-xl">
-                <li className="nav-link   ">
+              <ul className="nav text-xl ">
+                <li className="nav-link  mt-2 ">
                   <button
-                    onClick={() => {
-                      const element = document.getElementById("proyectosDiv");
-                      element?.scrollIntoView({
-                        behavior: "smooth",
-                      });
-                    }}
-                    className="btnHover"
+                    onClick={() => handleScrollToSection("proyectos")}
+                    className={`btnHover ${
+                      isScrolled ? "text-teal-50" : "text-black"
+                    }`}
                   >
                     Proyectos
                   </button>
                 </li>
-                <li className="nav-link">
+                <li className="nav-link mt-2">
                   <button
-                    onClick={() => {
-                      const element = document.getElementById("habilidadesDiv");
-                      element?.scrollIntoView({
-                        behavior: "smooth",
-                      });
-                    }}
-                    className="btnHover"
+                    onClick={() => handleScrollToSection("habilidades")}
+                    className={`btnHover ${
+                      isScrolled ? "text-teal-50" : "text-black"
+                    }`}
                   >
                     Habilidades
                   </button>
                 </li>
-                <li className="nav-link">
+                <li className="nav-link mt-2">
                   <button
-                    onClick={() => {
-                      const element =
-                        document.getElementById("certificadosDiv");
-                      element?.scrollIntoView({
-                        behavior: "smooth",
-                      });
-                    }}
-                    className="btnHover"
+                    onClick={() => handleScrollToSection("certificadosDiv")}
+                    className={`btnHover ${
+                      isScrolled ? "text-teal-50" : "text-black"
+                    }`}
                   >
                     Sobre Mi
                   </button>
                 </li>
               </ul>
+            </div>
+            <div className="flex items-center">
+              <a
+                href="/cv.pdf"
+                download
+                className={`hidden lg:flex gap-2 bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors no-underline
+                       ${isScrolled ? "text-yellow-100" : "text-white"}`}
+              >
+                Descargar CV
+                <MdOutlineFileDownload size={24} />
+              </a>
             </div>
           </div>
         </div>
