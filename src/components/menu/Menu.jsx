@@ -185,28 +185,17 @@ export const Menu = () => {
       </div>
 
       <div
-        className={`transition-colors duration-500 
-          ${isScrolled ? " bg-[#242525] " : "bg-[#ffffff]"}
+        className={`bg-transparent
+          
         `}
       >
-        <div className="padreNav ">
-          <div
-            className={`flex justify-around  ${
-              isScrolled ? "text-teal-50" : "text-black"
-            } flex  p-1 sm:p-2 justify-between  lg:mx-12 2xl:mx-28`}
-          >
-            <button
-              className="hidden lg:block text-xl uppercase font-medium k"
-              onClick={() => {
-                const element = document.getElementById("home");
-                element?.scrollIntoView({
-                  behavior: "smooth",
-                });
-              }}
-            >
-              Rafael Romeroa
-            </button>
+        <div
+          className={`flex  md:gap-10 lg:w-fit md:px-10 mx-auto transition-all duration-300 
+          md:rounded-full ${isScrolled ? "bg-[#fafafa]" : "bg-[#f9fafb]"}`}
+        >
+          <div className={` flex justify-between items-center  w-full `}>
             <div className="w-full flex p-2 z-10 items-center justify-between lg:hidden">
+              {/*Nombre mobile*/}
               <button
                 className="uppercase font-medium"
                 onClick={() => handleScrollToSection("home")}
@@ -229,9 +218,7 @@ export const Menu = () => {
                 <li className="nav-link  mt-2 ">
                   <button
                     onClick={() => handleScrollToSection("proyectos")}
-                    className={`btnHover ${
-                      isScrolled ? "text-teal-50" : "text-black"
-                    }`}
+                    className={`btnHover text-black`}
                   >
                     Proyectos
                   </button>
@@ -239,9 +226,7 @@ export const Menu = () => {
                 <li className="nav-link mt-2">
                   <button
                     onClick={() => handleScrollToSection("habilidades")}
-                    className={`btnHover ${
-                      isScrolled ? "text-teal-50" : "text-black"
-                    }`}
+                    className={`btnHover text-black`}
                   >
                     Habilidades
                   </button>
@@ -249,16 +234,14 @@ export const Menu = () => {
                 <li className="nav-link mt-2">
                   <button
                     onClick={() => handleScrollToSection("certificadosDiv")}
-                    className={`btnHover ${
-                      isScrolled ? "text-teal-50" : "text-black"
-                    }`}
+                    className={`btnHover text-black`}
                   >
                     Sobre Mi
                   </button>
                 </li>
               </ul>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center ml-10">
               <a
                 href="/cv.pdf"
                 download

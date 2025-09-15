@@ -7,7 +7,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-  background: rgb(239, 237, 237) !important;
+  background: #f9fafb !important;
 }
 
 .headerbackground {
