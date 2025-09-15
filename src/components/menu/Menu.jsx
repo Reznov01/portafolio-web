@@ -191,7 +191,9 @@ export const Menu = () => {
       >
         <div
           className={`flex py-2 px-2  md:gap-10 lg:w-fit md:px-10 mx-auto transition-all duration-300 
-          md:rounded-full ${isScrolled ? "bg-[#ecedee]" : "bg-[#f9fafb]"}`}
+          md:rounded-full ${
+            isScrolled ? "bg-[#ecedee] lg:bg-[#f9fafb]" : "bg-[#f9fafb]"
+          }`}
         >
           <div className={` flex justify-between items-center  w-full `}>
             <div className="w-full flex p-2 z-10 items-center justify-between lg:hidden">
